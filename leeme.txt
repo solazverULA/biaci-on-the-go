@@ -1,0 +1,8 @@
+#Correr migraciones
+    python manage.py makemigrations
+
+#Aplicar migraciones en base de datos
+    python manage.py migrate
+
+#Abrir Shell de Django
+    python manage.py shell
