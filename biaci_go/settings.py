@@ -40,8 +40,14 @@ INSTALLED_APPS = [
     'perfil',
     'libro',
     'reserva',
-    'lugar'
+    'lugar' ,
+    'pages' ,
+    'users'
 ]
+
+AUTH_USER_MODEL = 'users.CustomUser' 
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -58,7 +64,7 @@ ROOT_URLCONF = 'biaci_go.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,7 +89,7 @@ DATABASES = {
         'NAME': 'biaci_bd',
         'USER': 'postgres',
         'HOST': 'localhost',
-        'PASSWORD': '22538371'
+        'PASSWORD': '257498'
     }
 }
 
