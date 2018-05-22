@@ -17,10 +17,13 @@ from django.contrib import admin
 
 from django.urls import include, path
 
+#from libro.views import views
+
 
 urlpatterns = [
 	path('', include('users.urls')), # new
     path('users/', include('django.contrib.auth.urls')), 
     path('admin/', admin.site.urls),
-    path('libro/', include('libro.urls')),
+    path('libro/', include('libro.urls'), name='ver_libro'),
+
 ]

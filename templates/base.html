@@ -29,9 +29,9 @@
 
                 <!-- Search -->
                     <section id="search" class="alt">
-                        <form method="post" action="">
+                        <form method="post" action="{% url 'libros' %}">
                             {% csrf_token %}
-                            <input type="text" name="titulo" id="titulo" placeholder="Search" />
+                            <input type="text" name="palabra" id="palabra" placeholder="Buscar Libro" />
                         </form>
                     </section>
 
@@ -65,7 +65,14 @@
                                     <li><a href="http://www.serbi.ula.ve/odontologia/">Odontologia</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Recursos</a></li>
+                            <li>
+                                <span class="opener">Recursos</span>
+                                <ul>
+                                    <li><a href="{% url 'buscador_libro' %}">Libros</a></li>
+                                    <li><a href="">Revista</a></li>
+                                    <li><a href="">Tesis</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#">Reserva de Libros</a></li>
                             <li><a href="#">Material Digital</a></li>
                             <li><a href="#">Mi Perfil</a></li>
