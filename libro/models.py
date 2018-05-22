@@ -130,6 +130,6 @@ class Ejemplar(models.Model):
 
     def get_absolute_url(self):
         """
-        Devuelve la url para acceder a u registro de este ejemplar
+        Devuelve la url para acceder a un registro de este ejemplar
         """
         return reverse('detalle-ejemplar', args=[str(self.id)])
