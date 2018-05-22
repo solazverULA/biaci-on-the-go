@@ -1,11 +1,35 @@
 <!-- templates/home.html -->
-<h1>Django Login Mega-Tutorial</h1>
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+    <!-- Banner -->
+        <section id="banner">
+            <div class="content">
+                <header>
+                    <h1>{% block heading %}BiblioApp una </br> herramienta{% endblock %}</h1>
+                    <p>PARA LECTORES DE LA ULA</p>
+                </header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <ul class="actions">
+                    <li><a href="#" class="button big">LEER MAS</a></li>
+                </ul>
+            </div>
+            <span class="image object">
+                <img src="{% static 'images/1.jpg' %}" alt="" />
+            </span>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+<!-- templates/home.html <h1>Django Login Mega-Tutorial</h1>
 
 {% if user.is_authenticated %}
 
-	<p>Hi {{ user.firt_name }}
+	<p>Hi {{ user.username }}
 	<p><a href="{% url 'logout' %}">Log out</a></p>
 {% else %}
 	<p><a href="{% url 'signup' %}">Sign Up</a></p>
 	<p><a href="{% url 'login' %}">Log In </a></p>
-{% endif %}
+{% endif %}-->

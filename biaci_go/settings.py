@@ -41,11 +41,11 @@ INSTALLED_APPS = [
     'libro',
     'reserva',
     'lugar',
-    'pages',
     'users'
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser' 
+
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
@@ -89,7 +89,7 @@ DATABASES = {
         'NAME': 'biaci_bd',
         'USER': 'postgres',
         'HOST': 'localhost',
-        'PASSWORD': '22538371'
+        'PASSWORD': '257498'
     }
 }
 
