@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'perfil',
     'libro',
     'reserva',
-    'lugar' ,
-    'pages' ,
+    'lugar',
+    'pages',
     'users'
 ]
 
@@ -89,7 +89,7 @@ DATABASES = {
         'NAME': 'biaci_bd',
         'USER': 'postgres',
         'HOST': 'localhost',
-        'PASSWORD': '257498'
+        'PASSWORD': '22538371'
     }
 }
 
