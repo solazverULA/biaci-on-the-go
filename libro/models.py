@@ -109,7 +109,7 @@ class Libro(models.Model):
         """
         Devuelve la url para acceder a u registro de este libro
         """
-        return reverse('detalle-libro', args=[str(self.cota)])
+        return reverse('ejemplar', args=[str(self.cota)])
 
 
 class Ejemplar(models.Model):

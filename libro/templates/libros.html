@@ -24,7 +24,7 @@
                         <td>{{libros.cota}}</td>
                         <td>{{libros.titulo}}</td>
                         <td>{% for autor in libros.autor.all %} {{ autor }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
-                        <td><a href="#" class="icon fa-search"></a></td>
+                        <td><a href="{{ libros.get_absolute_url }}" class="icon fa-search"></a></td>
                     </tr>
                     {% endfor %}
                 </tbody>

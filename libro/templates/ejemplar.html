@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+
+   <h1>Title: {{ ejemplar.title }}</h1>
+
+  <p><strong>Author:</strong> <a href="">{{ ejemplar.autor }}</a></p> <!-- author detail link not yet defined -->
+  <p><strong>Summary:</strong> {{ ejemplar.descripcion }}</p>
+  <p><strong>ISBN:</strong> {{ ejemplar.isbn }}</p>
+  <p><strong>Language:</strong> {{ ejemplar.idioma }}</p>
+  <p><strong>Genre:</strong> {% for genre in ejemplar.materia.all %} {{ materia }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Copies</h4>
+
+    {% for copy in ejemplar.ejemplar_set.all %}
+    <hr>
+    <p><strong>Imprint:</strong> {{copy.estado}}</p>
+    <p class="text-muted"><strong>Id:</strong> {{copy.id}}</p>
+    <p class="text-muted"><strong>Biblioteca:</strong> {{copy.biblioteca}}</p>
+    {% endfor %}
+  </div>
+    <!--Siempre van dos div que cierran-->
+    </div>
+</div>
+{% endblock %}

@@ -1,4 +1,4 @@
-# biaci-go
+# Biaci On The Go (https://biacionthego.herokuapp.com/)
 
 ## Versiones
     - Python 3.6.3
@@ -7,6 +7,8 @@
     - virtualenv-15.2.0
     - pip3
     - psql (PostgreSQL) 9.6.8
+    - Dj-databse-url 0.5.0
+    - Gunicorn 19.8.1
 
 ## Poner por defecto temporalmente python 3
     ~$ alias python=python3
@@ -17,7 +19,10 @@
     ~$ source ~/.virtualenvs/biblio_app/bin/activate
 
 ## Crear en Postgre Base de datos (Modificar usuario en settings.py)
-    ~$ CREATE DATABASE biaci_go
+    ~$ CREATE DATABASE biaci_db
+
+## Migrar modelos
+    ~$ python manage.py makemigrations
 
 ## Migrar cambios a Postgre
     ~$ python manage.py migrate
@@ -25,14 +30,10 @@
 ## Correr Servidor Django
     ~$ python manage.py runserver
 
-## Migrar modelos de app
-    ~$ python manage.py makemigrations biaci_go
-
 ## Crear Superusuario para Admin
     ~$ python manage.py createsuperuser
 
 ## Para desplegar en heroku
-    https://tutorial-extensions.djangogirls.org/es/heroku/
     http://pythonpiura.org/posts/2016/04/17/deployando-proyectos-django-en-heroku/
 
 ## Solo para Administrador heroku
@@ -40,11 +41,5 @@
     ~$ heroku run python manage.py migrate
     ~$ heroku ps:scale web=1
 
-## Correr migraciones
-    ~$ python manage.py makemigrations
-
-## Aplicar migraciones en base de datos
-    ~$ python manage.py migrate
-
 ## Abrir Shell de Django
-  ~$ python manage.py shell
+    ~$ python manage.py shell
