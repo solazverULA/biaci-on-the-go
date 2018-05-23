@@ -40,6 +40,7 @@
     ~$ git push heroku master
     ~$ heroku run python manage.py migrate
     ~$ heroku ps:scale web=1
+    ~$ DEBUG = False
 
 ## Abrir Shell de Django
     ~$ python manage.py shell
