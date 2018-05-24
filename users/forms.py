@@ -14,6 +14,8 @@ class CustomUserCreationForm(UserCreationForm):
 	        'last_name',
 	        'cedula',
 	        'email',
+	        'cod_area' ,
+	        'num_telefono' ,
 	        'sexo' ,        
 	        'direccion',
         )

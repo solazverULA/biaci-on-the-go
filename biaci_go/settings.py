@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'perfil',
     'libro',
     'reserva',
-    'lugar',
     'users'
 ]
 

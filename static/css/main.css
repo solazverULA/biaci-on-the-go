@@ -3038,7 +3038,7 @@
 			input[type="button"].special:hover,
 			button.special:hover,
 			.button.special:hover {
-				background-color: #f67878;
+				background-color: #2991b9;
 			}
 
 			input[type="submit"].special:active,
@@ -3046,7 +3046,7 @@
 			input[type="button"].special:active,
 			button.special:active,
 			.button.special:active {
-				background-color: #f45c5c;
+				background-color: #297bb9;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -3588,7 +3588,7 @@
 		-webkit-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
 		-ms-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
 		transition: margin-left 0.5s ease, box-shadow 0.5s ease;
-		background-color: #f5f6f7;
+		background-color: #ecf0f1;
 		font-size: 0.9em;
 		position: relative;
 		width: 26em;
@@ -3621,7 +3621,7 @@
 				}
 
 			#sidebar > .inner > .alt {
-				background-color: #eff1f2;
+				background-color: #ecf0f1;
 				border-bottom: 0;
 				margin: -2.22222em 0 4.44444em -2.22222em;
 				padding: 2.22222em;
