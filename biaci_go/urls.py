@@ -25,5 +25,5 @@ urlpatterns = [
     path('users/', include('django.contrib.auth.urls')), 
     path('admin/', admin.site.urls),
     path('libro/', include('libro.urls'), name='ver_libro'),
-
+    path('reserva/', include('reserva.urls'), name='res'),
 ]

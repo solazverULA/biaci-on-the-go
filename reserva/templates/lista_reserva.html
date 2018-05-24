@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+
+    <section>
+        <header class="main">
+            <h1>{% block heading %}Reserva de Libros<br>{% endblock %}</h1>
+        </header>
+        {% if user.is_authenticated %}
+            <h3>Lista de Reservas:</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ejemplar</th>
+                            <th>Usuario</th>
+                            <th>Fecha Reserva</th>
+                            <th>Fecha Caducidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for reservas in reserva %}
+                          {% if reservas.id_usuario == user %}
+                            <tr>
+                                <td>{{reservas.id_ejemplar}}</td>
+                                <td>{{reservas.id_usuario}}</td>
+                                <td>{{reservas.fecha_reserva}}</td>
+                                <td>{{reservas.fecha_caducidad}}</td>
+                              </tr>
+                            {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+          {% else %}
+              <h3>Por favor inicie sesión para continuar. </h3>
+              <li><a href="{% url 'login' %}">Login</a></li>
+          {% endif %}
+    </section>
+    <!--Siempre van dos div que cierran-->
+    </div>
+</div>
+{% endblock %}
