@@ -72,7 +72,12 @@
                                     <li><a href="">Tesis</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{% url 'reserva' %}">Reserva de Libros</a></li>
+                            <li>
+                              <span class="opener">Reserva de Libros</span>
+                                <ul>
+                                  <li><a href="{% url 'reservar' %}">Reservar libro</a></li>
+                                  <li><a href="{% url 'lista' %}">Ver lista de reservas</a></li>
+                                </ul>
                             <li><a href="#">Material Digital</a></li>
                             <li><a href="#">Mi Perfil</a></li>
                             <li><a href="#">Sugerencias</a></li>
