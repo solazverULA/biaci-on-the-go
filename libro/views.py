@@ -1,35 +1,74 @@
 from django.template.response import TemplateResponse
 
-from django.shortcuts import render
+from django.http import HttpResponseRedirect
+
+from django.shortcuts import render, get_object_or_404
 
 from django.views.generic import View
+
 
 from .models import Libro, Autor, Materia, Ejemplar, Biblioteca, Idioma
 
 
+from .forms import ConsultaLibroForm
+
+
 def buscador(request):
 
-    biblioteca = Biblioteca.objects.all()
+    """form = ConsultaLibroForm()
 
     return render(
 
         request,
         'buscar.html',
-        context={'biblioteca':biblioteca},
+        context={'form': form},
 
-    )
+    )"""
+    if request.method == 'POST':
+
+        form = ConsultaLibroForm(request.POST)
+        if form.is_valid():
+            return HttpResponseRedirect('/thanks/')
+    else:
+        form = ConsultaLibroForm()
+
+    return render(request, 'buscar.html', {'form': form})
 
 
 class LibrosVista(View):
 
     def post(self, request, *args, **kwargs):
-        
-        context = {
-            'libro': Libro.objects.filter(titulo__icontains=request.POST['palabra']),
-            'palabra': request.POST['palabra']
-        }
 
-        return TemplateResponse(request, 'libros.html', context)
+        palabra = request.POST['titulo']
+
+        biblioteca = request.POST['biblioteca']
+        por = request.POST['buscar_por']
+
+        if por == '0' and biblioteca == '':
+            consulta = Libro.objects.filter(titulo__icontains=palabra)
+
+        if por == '1' and biblioteca == '':
+            consulta = Libro.objects.filter(autor__icontains=palabra)
+
+        if por == '2' and biblioteca == '':
+            consulta = Libro.objects.filter(isbn__icontains=palabra)
+
+        if por == '3' and biblioteca == '':
+            consulta = Libro.objects.filter(cota__icontains=palabra)
+
+        if por == '0' and biblioteca != '':
+            consulta = Libro.objects.filter(titulo__icontains=palabra, biblioteca=biblioteca)
+
+        if por == '1' and biblioteca != '':
+            consulta = Libro.objects.filter(autor__icontains=palabra, biblioteca=biblioteca)
+
+        if por == '2' and biblioteca != '':
+            consulta = Libro.objects.filter(isbn__icontains=palabra, biblioteca=biblioteca)
+
+        if por == '3' and biblioteca != '':
+            consulta = Libro.objects.filter(cota__icontains=palabra, biblioteca=biblioteca)
+
+        return TemplateResponse(request, 'libros.html', {'consulta': consulta, 'palabra':palabra})
 
 
 class EjemplaresVista(View):

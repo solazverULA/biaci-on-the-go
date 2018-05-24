@@ -98,6 +98,7 @@ class Libro(models.Model):
     autor = models.ManyToManyField(Autor)
     materia = models.ManyToManyField(Materia)
     idioma = models.ForeignKey('Idioma', on_delete=models.SET_NULL, null=True)
+    biblioteca = models.ForeignKey('Biblioteca', on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         """
@@ -119,7 +120,6 @@ class Ejemplar(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     libro = models.ForeignKey('Libro', on_delete=models.SET_NULL, null=True)
     estado = models.CharField(max_length=1, choices=ESTADO_EJEMPLAR, blank=True, default='D')
-    biblioteca = models.ForeignKey('Biblioteca', on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         """
