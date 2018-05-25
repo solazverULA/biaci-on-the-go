@@ -72,7 +72,14 @@ class LibrosVista(View):
 
 
 class EjemplaresVista(View):
+    """
+    def get(self, request, *args, **kwargs):
+        context = {
+            # 'todo_list': Recurso.objects.all()
+        }
 
+        return TemplateResponse(request, 'ejemplar.html', context)
+    """
     def ejemplar(request, pk):
         try:
             libro_id = Libro.objects.get(pk=pk)

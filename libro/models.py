@@ -2,6 +2,9 @@ from django.db import models
 
 from django.urls import reverse  # Usado para generar URL
 
+from django.core.validators import RegexValidator
+
+
 import uuid
 
 ESTADO_EJEMPLAR = (
@@ -117,7 +120,10 @@ class Ejemplar(models.Model):
     """
         Modelo que representa un ejemplar de un libro
     """
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    ejemplar = models.CharField(
+        max_length=4,
+        validators=[RegexValidator(regex="^[e]{1}[0-9]{1,3}$", message="Formato de ejemplar incorrecto, ej: e1")],
+    )
     libro = models.ForeignKey('Libro', on_delete=models.SET_NULL, null=True)
     estado = models.CharField(max_length=1, choices=ESTADO_EJEMPLAR, blank=True, default='D')
 
@@ -125,8 +131,14 @@ class Ejemplar(models.Model):
         """
         Cadena para representar el objeto
         """
-        return '{0} ({1})'.format(self.id, self.libro.titulo)
+        return '{0} ({1})'.format(self.libro.cota, self.ejemplar)
         # return f'{self.id} ({self.book.title})'
+
+    class Meta:
+        """
+        Simulacion de clave compuesta con campo unico tipo tupla
+        """
+        unique_together = (("ejemplar", "libro"),)
 
     def get_absolute_url(self):
         """
