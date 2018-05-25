@@ -3,23 +3,41 @@
 
 {% block body %}
 
-   <h1>Title: {{ ejemplar.title }}</h1>
+   <h1>Titulo: {{ ejemplar.titulo }}</h1>
 
-  <p><strong>Author:</strong> <a href="">{{ ejemplar.autor }}</a></p> <!-- author detail link not yet defined -->
-  <p><strong>Summary:</strong> {{ ejemplar.descripcion }}</p>
+  <p><strong>Autor:</strong> {% for autor in ejemplar.autor.all %} {{ autor }}{% if not forloop.last %}, {% endif %}{% endfor %}</p> <!-- author detail link not yet defined -->
+  <p><strong>Descripci&oacute;n:</strong> {{ ejemplar.descripcion }}</p>
   <p><strong>ISBN:</strong> {{ ejemplar.isbn }}</p>
-  <p><strong>Language:</strong> {{ ejemplar.idioma }}</p>
-  <p><strong>Genre:</strong> {% for genre in ejemplar.materia.all %} {{ materia }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+  <p><strong>Idioma:</strong> {{ ejemplar.idioma }}</p>
+  <p><strong>Idioma:</strong> {{ ejemplar.biblioteca }}</p>
+  <p><strong>Materias:</strong> {% for materia in ejemplar.materia.all %} {{ materia }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
 
   <div style="margin-left:20px;margin-top:20px">
-    <h4>Copies</h4>
-
-    {% for copy in ejemplar.ejemplar_set.all %}
-    <hr>
-    <p><strong>Imprint:</strong> {{copy.estado}}</p>
-    <p class="text-muted"><strong>Id:</strong> {{copy.id}}</p>
-    <p class="text-muted"><strong>Biblioteca:</strong> {{copy.biblioteca}}</p>
-    {% endfor %}
+    <h4>Ejemplares</h4>
+    <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cota</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for copy in ejemplar.ejemplar_set.all %}
+                    <tr>
+                        <td>{{copy.libro}} {{copy.ejemplar}}</td>
+                        <td>
+                          {% if copy.estado == 'P' %} Prestado {% endif %}
+                          {% if copy.estado == 'D' %} Disponible {% endif %}
+                          {% if copy.estado == 'B' %} Bloqueado {% endif %}
+                        </td>
+                        <td><a href="{{ libros.get_absolute_url }}" class="icon fa-search"></a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
   </div>
     <!--Siempre van dos div que cierran-->
     </div>

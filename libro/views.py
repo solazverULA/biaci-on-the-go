@@ -72,15 +72,22 @@ class LibrosVista(View):
 
 
 class EjemplaresVista(View):
-    """
-    def get(self, request, *args, **kwargs):
-        context = {
-            # 'todo_list': Recurso.objects.all()
-        }
 
-        return TemplateResponse(request, 'ejemplar.html', context)
-    """
-    def ejemplar(request, pk):
+    def get(self, request, pk, **kwargs):
+
+        try:
+            libro = Libro.objects.get(pk=pk)
+        except Libro.DoesNotExist:
+            raise Http404("El libro no existe")
+
+        # book_id=get_object_or_404(Book, pk=pk)
+
+        return render(
+            request,
+            'ejemplar.html',
+            context={'ejemplar': libro, }
+        )
+    """def ejemplar(request, pk):
         try:
             libro_id = Libro.objects.get(pk=pk)
         except Libro.DoesNotExist:
@@ -93,3 +100,4 @@ class EjemplaresVista(View):
             'ejemplar.html',
             context={'ejemplar': libro_id, }
         )
+    """

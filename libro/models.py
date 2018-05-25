@@ -107,7 +107,7 @@ class Libro(models.Model):
         """
         Cadena para representar el objeto
         """
-        return self.titulo
+        return self.cota
 
     def get_absolute_url(self):
         """
