@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+
+    <section>
+        <header class="main">
+            <h1>{% block heading %}Reserva de Libros<br>{% endblock %}</h1>
+        </header>
+        {% if user.is_authenticated %}
+            <h3>Reservar:</h3>
+            <form method="post">
+              {% csrf_token%}
+                {{form.as_p}}
+              <button type="submit">Generar</button>
+            </form>
+          {% else %}
+              <h3>Por favor inicie sesión para continuar. </h3>
+              <li><a href="{% url 'login' %}">Login</a></li>
+          {% endif %}
+    </section>
+    <!--Siempre van dos div que cierran-->
+    </div>
+</div>
+{% endblock %}
