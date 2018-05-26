@@ -68,6 +68,8 @@ class LibrosVista(View):
         if por == '3' and biblioteca != '':
             consulta = Libro.objects.filter(cota__icontains=palabra, biblioteca=biblioteca)
 
+        get_object_or_404(consulta, pk=1)
+
         return TemplateResponse(request, 'libros.html', {'consulta': consulta, 'palabra':palabra})
 
 
