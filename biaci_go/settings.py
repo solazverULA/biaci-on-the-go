@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'biaci_bd',
         'USER': 'postgres',
         'HOST': 'localhost',
-        'PASSWORD': '22538371'
+        'PASSWORD': '853247'
     }
 }
 

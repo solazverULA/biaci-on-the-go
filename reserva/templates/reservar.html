@@ -9,14 +9,14 @@
         </header>
         {% if user.is_authenticated %}
             <h3>Reservar:</h3>
-            <form method="post">
+            <form method="POST">
               {% csrf_token%}
                 {{form.as_p}}
               <button type="submit">Generar</button>
             </form>
           {% else %}
-              <h3>Por favor inicie sesión para continuar. </h3>
-              <li><a href="{% url 'login' %}">Login</a></li>
+            <h3>Por favor inicie sesión para continuar. </h3>
+            <a href="{% url 'login' %}" class = "button">Login</a></td>
           {% endif %}
     </section>
     <!--Siempre van dos div que cierran-->

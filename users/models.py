@@ -27,6 +27,7 @@ class CompleteUser(CustomUser):
         max_length=11, 
         unique= True,
         validators=[RegexValidator(regex="^[V|E]{1}[0]{1}[0-9]{7,9}$",message="Formato de Cedula invalido , ej: V0123456")],
+        help_text='Fortamto: V012345678',
     )
 	estado = models.CharField(
         max_length=1,

@@ -10,3 +10,6 @@ class Reserva(models.Model):
     fecha_caducidad = models.DateTimeField(default=datetime.now)
     id_ejemplar = models.ForeignKey(Ejemplar, on_delete=models.CASCADE,null=True)
     id_usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE,null=True)
+
+    def __unicode__(self):
+        return self.id_usuario
