@@ -13,20 +13,24 @@
                 <table>
                     <thead>
                         <tr>
+                            <th>Numero de Reserva</th>
                             <th>Ejemplar</th>
                             <th>Usuario</th>
                             <th>Fecha Reserva</th>
                             <th>Fecha Caducidad</th>
+                            <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for reservas in reserva %}
                           {% if reservas.id_usuario == user %}
                             <tr>
+                                <td>{{reservas.id}}</td>
                                 <td>{{reservas.id_ejemplar}}</td>
                                 <td>{{reservas.id_usuario}}</td>
                                 <td>{{reservas.fecha_reserva}}</td>
                                 <td>{{reservas.fecha_caducidad}}</td>
+                                <td><a href="{% url 'eliminar' reservas.id %}" method="POST" class = "button">Eliminar</a></td>
                               </tr>
                             {% endif %}
                         {% endfor %}
@@ -35,7 +39,7 @@
             </div>
           {% else %}
               <h3>Por favor inicie sesión para continuar. </h3>
-              <li><a href="{% url 'login' %}">Login</a></li>
+              <a href="{% url 'login' %}" class = "button">Login</a></td>
           {% endif %}
     </section>
     <!--Siempre van dos div que cierran-->

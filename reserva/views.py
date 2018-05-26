@@ -17,8 +17,13 @@ def Reservar(request):
     if request.method == 'POST':
         form = ReservaForm(request.POST)
         if form.is_valid():
-            form.save()
+            form.save(),
             return redirect ('lista')
     else:
         form = ReservaForm
         return render(request,'reservar.html',{'form':form})
+
+def Reserva_delete(request,id_reserva):
+    reserva = Reserva.objects.get(id=id_reserva)
+    reserva.delete()
+    return redirect('lista')

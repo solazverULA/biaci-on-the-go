@@ -26,3 +26,10 @@ class ReservaForm(forms.ModelForm):
             'fecha_reserva':forms.TextInput(attrs = {'class':'form-control'}),
             'fecha_caducidad':forms.TextInput(attrs = {'class':'form-control'}),
         }
+
+    def __init__(self, *args, **kwargs):
+       super(ReservaForm, self).__init__(*args, **kwargs)
+       #self.fields['id_usuario'].initial="miguel"
+       #self.fields['id_usuario'].widget.attrs['readonly'] = True
+       self.fields['fecha_reserva'].widget.attrs['readonly'] = True
+       self.fields['fecha_caducidad'].widget.attrs['readonly'] = True
