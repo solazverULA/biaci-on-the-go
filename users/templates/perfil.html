@@ -5,14 +5,15 @@
 
     <section>
         <header class="main">
-            <h1>{% block heading %}Prestamos<br>{% endblock %}</h1>
+            <h1>{% block heading %}Perfil<br>{% endblock %}</h1>
         </header>
         {% if user.is_authenticated %}
             <h3>PERFIL</h3>
-            <a href="{% url 'lista_prestamos' %}" class = "button">Ver Prestamos</a></td>
+            <p>{{userdata.cedula}}</p>
+            <a href="{% url 'lista_prestamos' %}" class = "button">Ver Prestamos</a>
           {% else %}
               <h3>Por favor inicie sesión para continuar. </h3>
-              <a href="{% url 'login' %}" class = "button">Login</a></td>
+              <a href="{% url 'login' %}" class = "button">Login</a>
           {% endif %}
     </section>
     <!--Siempre van dos div que cierran-->

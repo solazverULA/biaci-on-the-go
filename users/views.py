@@ -15,8 +15,7 @@ class HomePageView(TemplateView):
     template_name = 'home.html'    
 
 def PerfilView(request):
-    userdata = CompleteUser.objects.filter(first_name="Manuel")
-    #userdata = CompleteUser.objects.CustomUser.filter(first_name=request.user)
-    #userdata = CompleteUser.objects.all().filter(user = request.user)
-    return render(request,'perfil.html',{'userdata':userdata})
+	usuario = CustomUser.objects.get(username=request.user)
+	userdata = CompleteUser.objects.get(customuser_ptr_id=usuario.id)
+	return render(request,'perfil.html',{'userdata':userdata},)
 # Create your views here.

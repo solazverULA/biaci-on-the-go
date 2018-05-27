@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'perfil',
     'libro',
     'reserva',
     'users',
@@ -91,7 +90,7 @@ DATABASES = {
         'NAME': 'biaci_bd',
         'USER': 'postgres',
         'HOST': 'localhost',
-        'PASSWORD': '853247'
+        'PASSWORD': '257498'
     }
 }
 
