@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'perfil',
     'libro',
     'reserva',
-    'users'
+    'users',
+    'prestamo'
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
@@ -90,7 +91,7 @@ DATABASES = {
         'NAME': 'biaci_bd',
         'USER': 'postgres',
         'HOST': 'localhost',
-        'PASSWORD': '22538371'
+        'PASSWORD': '853247'
     }
 }
 

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+
+    <section>
+        <header class="main">
+            <h1>{% block heading %}Prestamos<br>{% endblock %}</h1>
+        </header>
+        {% if user.is_authenticated %}
+            <h3>Lista de Prestamos:</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Numero de Prestamo</th>
+                            <th>Ejemplar</th>
+                            <th>Fecha Prestamo</th>
+                            <th>Fecha Entrega</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for prestamos in prestamo %}
+                            <tr>
+                                <td>{{prestamos.id}}</td>
+                                <td>{{prestamos.id_ejemplar}}</td>
+                                <td>{{prestamos.fecha_prestamo}}</td>
+                                <td>{{prestamos.fecha_entrega}}</td>
+                              </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+          {% else %}
+              <h3>Por favor inicie sesión para continuar. </h3>
+              <a href="{% url 'login' %}" class = "button">Login</a></td>
+          {% endif %}
+    </section>
+    <!--Siempre van dos div que cierran-->
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+
+    <section>
+        <header class="main">
+            <h1>{% block heading %}Prestamos<br>{% endblock %}</h1>
+        </header>
+        {% if user.is_authenticated %}
+            <h3>PERFIL</h3>
+            <a href="{% url 'lista_prestamos' %}" class = "button">Ver Prestamos</a></td>
+          {% else %}
+              <h3>Por favor inicie sesión para continuar. </h3>
+              <a href="{% url 'login' %}" class = "button">Login</a></td>
+          {% endif %}
+    </section>
+    <!--Siempre van dos div que cierran-->
+    </div>
+</div>
+{% endblock %}
