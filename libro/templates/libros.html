@@ -26,6 +26,10 @@
                         <td>{% for autor in libros.autor.all %} {{ autor }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
                         <td><a href="{{ libros.get_absolute_url }}" class="icon fa-search"></a></td>
                     </tr>
+                    {%empty%}
+                     <tr>
+                        <td colspan="4" class="align-center">No hay resultados que coincidan con la b&uacute;squeda</td>
+                    </tr>
                     {% endfor %}
                 </tbody>
             </table>

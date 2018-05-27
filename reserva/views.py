@@ -6,12 +6,14 @@ from .forms import ReservaForm
 
 # Create your views here.
 
+
 class ReservaLibros(View):
     def get(self, request, *args, **kwargs):
         context = {
             'reserva': Reserva.objects.all(),
             }
         return TemplateResponse(request, 'lista_reserva.html', context)
+
 
 def Reservar(request):
     if request.method == 'POST':
@@ -23,6 +25,7 @@ def Reservar(request):
     else:
        form = ReservaForm()
        return render(request,'reservar.html',{'form':form})
+
 
 def Reserva_delete(request,id_reserva):
     reserva = Reserva.objects.get(id=id_reserva)

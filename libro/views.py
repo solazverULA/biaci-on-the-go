@@ -48,7 +48,7 @@ class LibrosVista(View):
             consulta = Libro.objects.filter(titulo__icontains=palabra)
 
         if por == '1' and biblioteca == '':
-            consulta = Libro.objects.filter(autor__icontains=palabra)
+            consulta = Libro.objects.filter(autor__nombre__icontains=palabra)
 
         if por == '2' and biblioteca == '':
             consulta = Libro.objects.filter(isbn__icontains=palabra)
@@ -60,7 +60,7 @@ class LibrosVista(View):
             consulta = Libro.objects.filter(titulo__icontains=palabra, biblioteca=biblioteca)
 
         if por == '1' and biblioteca != '':
-            consulta = Libro.objects.filter(autor__icontains=palabra, biblioteca=biblioteca)
+            consulta = Libro.objects.filter(autor__nombre__icontains=palabra, biblioteca=biblioteca)
 
         if por == '2' and biblioteca != '':
             consulta = Libro.objects.filter(isbn__icontains=palabra, biblioteca=biblioteca)
@@ -68,7 +68,6 @@ class LibrosVista(View):
         if por == '3' and biblioteca != '':
             consulta = Libro.objects.filter(cota__icontains=palabra, biblioteca=biblioteca)
 
-        get_object_or_404(consulta, pk=1)
 
         return TemplateResponse(request, 'libros.html', {'consulta': consulta, 'palabra':palabra})
 

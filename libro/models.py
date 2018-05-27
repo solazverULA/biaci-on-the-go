@@ -90,7 +90,7 @@ class Libro(models.Model):
     Modelo que representa un libro (pero no un ejemplar para prestar).
     """
     cota = models.CharField(max_length=20, primary_key=True)
-    titulo = models.CharField(max_length=200)
+    titulo = models.CharField(max_length=150)
     anio = models.PositiveSmallIntegerField()
     idioma = models.CharField(max_length=15)
     lugar_publicacion = models.TextField(max_length=50)

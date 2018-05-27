@@ -28,11 +28,17 @@
                     <tr>
                         <td>{{copy.libro}} {{copy.ejemplar}}</td>
                         <td>
-                          {% if copy.estado == 'P' %} Prestado {% endif %}
-                          {% if copy.estado == 'D' %} Disponible {% endif %}
-                          {% if copy.estado == 'B' %} Bloqueado {% endif %}
+                            {% if copy.estado == 'P' %} Prestado {% endif %}
+                            {% if copy.estado == 'D' %} Disponible {% endif %}
+                            {% if copy.estado == 'B' %} Bloqueado {% endif %}
                         </td>
-                        <td><a href="{{ libros.get_absolute_url }}" class="icon fa-search"></a></td>
+                        <td>
+                            <a href="{{ libros.get_absolute_url }}" class="icon fa-search"></a>
+                            {% if copy.estado == 'D' %}
+                                <a href="{% url 'reservar' %}" class="icon fa-clock-o" method="POST" ></a>
+                            {% endif %}
+
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
