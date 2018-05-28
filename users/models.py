@@ -4,10 +4,10 @@ from django.core.validators import RegexValidator
 
 
 ESTADO_USUARIO = (
-    ('S', 'Suspendido'),
-    ('B', 'Bloqueado'),
-    ('I', 'Insolvente'),
-    ('T', 'Solvente'),
+    ('Suspendido', 'Suspendido'),
+    ('Bloqueado', 'Bloqueado'),
+    ('Insolvente', 'Insolvente'),
+    ('Solvente', 'Solvente'),
 )
 
 SEXO = (
@@ -30,9 +30,9 @@ class CompleteUser(CustomUser):
         help_text='Fortamto: V012345678',
     )
 	estado = models.CharField(
-        max_length=1,
+        max_length=15,
         choices=ESTADO_USUARIO,
-        default='T',
+        default='Solvente',
     )
 	sexo = models.CharField(max_length=1, choices=SEXO)
 	cod_area = models.CharField(max_length=4,

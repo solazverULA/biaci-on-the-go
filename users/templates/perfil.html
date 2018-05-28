@@ -2,17 +2,33 @@
 {% load staticfiles %}
 
 {% block body %}
-
     <section>
         <header class="main">
-            <h1>{% block heading %}Prestamos<br>{% endblock %}</h1>
+            <h1>{% block heading %}Perfil{% endblock %}</h1>
         </header>
         {% if user.is_authenticated %}
-            <h3>PERFIL</h3>
-            <a href="{% url 'lista_prestamos' %}" class = "button">Ver Prestamos</a></td>
+         <div class="container">   
+              <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+                 <div class="well profile">
+                    <div class="col-sm-12">
+                      <div class="col-xs-12 col-sm-8">
+                          <h2>{{user.get_full_name}} </h2><p class = "button special">{{userdata.estado}}</p>
+                          <p><strong>Direccion de Correo:</strong> {{user.email}}</p>
+                          <p><strong>Direccion de Habitacion:</strong> {{userdata.direccion}} </p>
+                          <p><strong>Cedula de Identidad:</strong> {{userdata.cedula}}</p>
+                      </div>                        
+                      <div class="col-xs-12 divider text-center">
+                        <a href="{% url 'lista' %}" class = "button">Ver Reservas</a>
+                        <a href="{% url 'lista_prestamos' %}" class = "button">Ver Prestamos</a>
+                        <a href="{% url 'logout' %}" class = "button special">Log Out</a>
+                      </div>                 
+              </div>
+              </div>
+              </div> 
+          </div> 
           {% else %}
               <h3>Por favor inicie sesión para continuar. </h3>
-              <a href="{% url 'login' %}" class = "button">Login</a></td>
+              <a href="{% url 'login' %}" class = "button">Login</a>
           {% endif %}
     </section>
     <!--Siempre van dos div que cierran-->
