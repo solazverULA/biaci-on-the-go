@@ -26,7 +26,7 @@
                 <tbody>
                     {% for copy in ejemplar.ejemplar_set.all %}
                     <tr>
-                        <td>{{copy.libro}} {{copy.ejemplar}}</td>
+                        <td>{{copy.cota}} {{copy.ejemplar}}</td>
                         <td>
                             {% if copy.estado == 'P' %} Prestado {% endif %}
                             {% if copy.estado == 'D' %} Disponible {% endif %}
@@ -35,9 +35,9 @@
                         <td>
                             <a href="{{ libros.get_absolute_url }}" class="icon fa-search"></a>
                             {% if copy.estado == 'D' %}
-                                <a href="{% url 'reservar' %}" class="icon fa-clock-o" method="POST" ></a>
-                            {% endif %}
 
+                                <a href="{% url 'reservar'%}" method="GET" class="icon fa-clock-o">
+                            {% endif %}
                         </td>
                     </tr>
                     {% endfor %}

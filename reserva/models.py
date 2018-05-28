@@ -12,16 +12,6 @@ class Reserva(models.Model):
     id_ejemplar = models.ForeignKey(Ejemplar, on_delete=models.CASCADE,null=True)
     id_usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE,null=True)
 
-    """
-    def __unicode__(self):
-        return self.id_usuario
-    """
-
-    def __str__(self):
-        """
-        Cadena para representar el objeto
-        """
-        return self.id
 
     def get_absolute_url(self):
         """
