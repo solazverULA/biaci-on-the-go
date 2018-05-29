@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+
+   <h1>Titulo: {{ ejemplar.titulo }}</h1>
+    <p><strong>Autor:</strong> {% for autor in ejemplar.autor.all %} {{ autor }}{% if not forloop.last %}, {% endif %}{% endfor %}</p> <!-- author detail link not yet defined -->
+    <p><strong>Descripci&oacute;n:</strong> {{ ejemplar.descripcion }}</p>
+    <p><strong>Idioma:</strong> {{ ejemplar.idioma }}</p>
+    <p><strong>Area:</strong> {{ ejemplar.area }}</p>
+    <p><strong>Año:</strong> {{ ejemplar.anio }}</p>
+    <p><strong>Biblioteca:</strong> {{ ejemplar.biblioteca }}</p>
+    <p><strong>Estado:</strong>
+    {% if ejemplar.estado == 'P' %} Prestado {% endif %}
+    {% if ejemplar.estado == 'D' %} Disponible {% endif %}
+    {% if ejemplar.estado == 'B' %} Bloqueado {% endif %}
+    </p>
+
+
+    <!--Siempre van dos div que cierran-->
+    </div>
+</div>
+{% endblock %}

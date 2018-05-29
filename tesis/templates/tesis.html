@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+
+    <section>
+        <header class="main">
+            <h1>{% block heading %}Catalogos de Tesis <br>{% endblock %}</h1>
+        </header>
+        <h3>B&uacute;squeda por: {{palabra}}</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cota</th>
+                        <th>T&iacute;tulo</th>
+                        <th>Area</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for revistas in consulta %}
+                    <tr>
+                        <td>{{revistas.cota}}</td>
+                        <td>{{revistas.titulo}}</td>
+                        <td>{{revistas.area}}</td>
+                        <td><a href="{{ revistas.get_absolute_url }}" class="icon fa-search"></a></td>
+                    </tr>
+                    {%empty%}
+                     <tr>
+                        <td colspan="4" class="align-center">No hay resultados que coincidan con la b&uacute;squeda</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!--Siempre van dos div que cierran-->
+    </div>
+</div>
+{% endblock %}

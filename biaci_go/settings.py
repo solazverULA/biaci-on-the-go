@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'libro',
     'revista',
+    'tesis',
     'reserva',
     'users',
     'prestamo'
