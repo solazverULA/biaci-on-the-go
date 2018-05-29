@@ -4,9 +4,6 @@ from django.urls import reverse  # Usado para generar URL
 
 from django.core.validators import RegexValidator
 
-
-import uuid
-
 ESTADO_EJEMPLAR = (
     ('P', 'Prestado'),
     ('D', 'Disponible'),
@@ -92,7 +89,6 @@ class Libro(models.Model):
     cota = models.CharField(max_length=20, primary_key=True)
     titulo = models.CharField(max_length=150)
     anio = models.PositiveSmallIntegerField()
-    idioma = models.CharField(max_length=15)
     lugar_publicacion = models.TextField(max_length=50)
     editorial = models.CharField(max_length=50)
     isbn = models.CharField('ISBN', max_length=13,

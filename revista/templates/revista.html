@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+
+    <section>
+        <header class="main">
+            <h1>{% block heading %}Catalogos de Libros <br>{% endblock %}</h1>
+        </header>
+        <h3>B&uacute;squeda por: {{palabra}}</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cota</th>
+                        <th>T&iacute;tulo</th>
+                        <th>Autor</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for libros in consulta %}
+                    <tr>
+                        <td>{{libros.cota}}</td>
+                        <td>{{libros.titulo}}</td>
+                        <td>{% for autor in libros.autor.all %} {{ autor }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
+                        <td><a href="{{ libros.get_absolute_url }}" class="icon fa-search"></a></td>
+                    </tr>
+                    {%empty%}
+                     <tr>
+                        <td colspan="4" class="align-center">No hay resultados que coincidan con la b&uacute;squeda</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!--Siempre van dos div que cierran-->
+    </div>
+</div>
+{% endblock %}

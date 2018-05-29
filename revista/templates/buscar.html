@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+
+    <section>
+        <header class="main">
+            <h1>{% block heading %}Buscador de Libros<br>{% endblock %}</h1>
+        </header>
+
+            <form method="post" action="{% url 'libros' %}">
+
+                {% csrf_token %}
+                {{ form.as_p }}
+                <!--<div class="4u$ 12u$(xsmall)">
+                    Buscar por:
+                    <div class="select-wrapper">
+                        <select name="por" id="por">
+                            <option value="0">Titulo</option>
+                            <option value="1">Autor</option>
+                            <option value="2">ISBN</option>
+                            <option value="3">Cota</option>
+                        </select>
+                    </div>
+                    Biblioteca:
+                    <div class="select-wrapper">
+                        <select name="biblioteca" id="biblioteca">
+                            <option value="0"> Biblioteca</option>
+                            {% for bibliotecas in biblioteca %}
+                            <option value="{{bibliotecas.codigo}}">{{bibliotecas.nombre}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>-->
+                <br>
+                <div class="12u$">
+                    <ul class="actions">
+                        <li><input type="submit" value="Buscar" class="special" /></li>
+                        <li><input type="reset" value="Limpiar" /></li>
+                    </ul>
+                </div>
+            </form>
+
+    </section>
+    <!--Siempre van dos div que cierran-->
+    </div>
+</div>
+{% endblock %}
