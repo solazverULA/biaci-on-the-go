@@ -15,21 +15,28 @@ class ReservaLibros(View):
         return TemplateResponse(request, 'lista_reserva.html', context)
 
 
-def Reservar(request):
+def Reservar(request, id_ejemplar):
 
-    #reserva = Ejemplar.objects.get(id=id_ejemplar)
+    def get_form_kwargs(self):
+        kwargs = super(Reservar, self).get_form_kwargs()
+
+        # La variable que queremos pasar al formulario
+        kwargs.update({'ejemplar': self.id_ejemplar})
+
+        return kwargs
+
 
     if request.method == 'POST':
         tap = Reserva(id_usuario=request.user)
-        #id_ejemplar = Reserva(id_ejemplar=request.id_ejemplar)
-        form = ReservaForm(request.POST,request.FILES, instance=tap)
+        form = ReservaForm(request.POST, id_ejemplar, request.FILES, instance=tap)
         if form.is_valid():
+
             form.save(),
             return redirect ('lista')
     else:
-       form = ReservaForm()
-       return render(request,'reservar.html',{'form':form})
-    
+        form = ReservaForm()
+        return render(request,'reservar.html',{'form':form})
+
 
 def Reserva_delete(request,id_reserva):
     reserva = Reserva.objects.get(id=id_reserva)

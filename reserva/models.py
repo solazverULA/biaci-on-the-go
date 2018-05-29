@@ -12,9 +12,3 @@ class Reserva(models.Model):
     id_ejemplar = models.ForeignKey(Ejemplar, on_delete=models.CASCADE,null=True)
     id_usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE,null=True)
 
-
-    def get_absolute_url(self):
-        """
-        Devuelve la url para acceder a u registro de esta reserva
-        """
-        return reverse('reserva', args=[str(self.id)])
