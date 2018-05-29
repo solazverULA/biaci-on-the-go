@@ -12,6 +12,8 @@ from .models import Libro, Autor, Materia, Ejemplar, Biblioteca, Idioma
 
 from .forms import ConsultaLibroForm
 
+from consulta.models import Consulta
+
 
 def buscador(request):
 
@@ -82,7 +84,9 @@ class EjemplaresVista(View):
             raise Http404("El libro no existe")
 
         # book_id=get_object_or_404(Book, pk=pk)
-
+        # Falta agregarle al objeto el titulo y el autor
+        busqueda = Consulta(username=request.user,tipo_material="Libro")
+        busqueda.save()
         return render(
             request,
             'ejemplar.html',

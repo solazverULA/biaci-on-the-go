@@ -29,4 +29,5 @@ urlpatterns = [
     path('perfil/', include('prestamo.urls'), name='prestamo'),
     path('revista/', include('revista.urls'), name='ver_revista'),
     path('tesis/', include('tesis.urls'), name='ver_tesis'),
+    path('', include('consulta.urls'), name='consulta'),
 ]

@@ -10,6 +10,7 @@ from .models import Tesis
 
 from .forms import ConsultaTesisForm
 
+from consulta.models import Consulta
 
 def buscador(request):
 
@@ -68,7 +69,9 @@ class EjemplaresTesis(View):
             tesis = Tesis.objects.get(pk=pk)
         except Tesis.DoesNotExist:
             raise Http404("La tesis no existe")
-
+        # Falta agregarle al objeto el titulo y el autor
+        busqueda = Consulta(username=request.user,tipo_material="Libro")
+        busqueda.save()
         return render(
             request,
             'ejemplar_tesis.html',
