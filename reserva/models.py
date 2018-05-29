@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import datetime
+from datetime import datetime, timedelta
 from libro.models import Ejemplar
 from users.models import CustomUser
 
@@ -8,7 +8,7 @@ from users.models import CustomUser
 
 class Reserva(models.Model):
     fecha_reserva = models.DateTimeField(default=datetime.now)
-    fecha_caducidad = models.DateTimeField(default=datetime.now)
+    fecha_caducidad = models.DateTimeField(default=datetime.now()+timedelta(hours=10))
     id_ejemplar = models.ForeignKey(Ejemplar, on_delete=models.CASCADE,null=True)
     id_usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE,null=True)
 

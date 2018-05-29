@@ -10,7 +10,7 @@ from .forms import ReservaForm
 class ReservaLibros(View):
     def get(self, request, *args, **kwargs):
         context = {
-            'reserva': Reserva.objects.all(),
+            'reserva': Reserva.objects.filter(id_usuario=request.user),
             }
         return TemplateResponse(request, 'lista_reserva.html', context)
 
