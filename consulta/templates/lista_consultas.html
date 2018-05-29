@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+
+    <section>
+        <header class="main">
+            <h1>{% block heading %}Sugerencias<br>{% endblock %}</h1>
+        </header>
+        {% if user.is_authenticated %}
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Autor</th>
+                            <th>Tipo de material</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for consultas in consulta %}
+                            <tr>
+                                <td>{{consultas.titulo}}</td>
+                                <td>{{consultas.autor_nombre}},{{consultas.autor_apellido}}</td>
+                                <td>{{consultas.tipo_material}}</td>
+                              </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+          {% else %}
+              <h3>Por favor inicie sesión para continuar. </h3>
+              <a href="{% url 'login' %}" class = "button">Login</a></td>
+          {% endif %}
+    </section>
+    <!--Siempre van dos div que cierran-->
+    </div>
+</div>
+{% endblock %}

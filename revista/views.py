@@ -10,6 +10,7 @@ from revista.models import Revista
 
 from .forms import ConsultaRevistaForm
 
+from consulta.models import Consulta
 
 def buscador(request):
 
@@ -64,7 +65,9 @@ class EjemplaresVista(View):
             raise Http404("La Revista no existe")
 
         # book_id=get_object_or_404(Book, pk=pk)
-
+        # Falta agregarle al objeto el titulo y el autor
+        busqueda = Consulta(username=request.user,tipo_material="Libro")
+        busqueda.save()
         return render(
             request,
             'ejemplar_revista.html',
