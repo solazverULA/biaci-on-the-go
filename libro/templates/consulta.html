@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+
+    <section>
+        <header class="main">
+            <h1>{% block heading %}Catalogo OPAC <br>{% endblock %}</h1>
+        </header>
+        <h3>B&uacute;squeda por: {{palabra}}</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cota</th>
+                        <th>T&iacute;tulo</th>
+                        <th>Año</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for libros in libro %}
+                    <tr>
+                        <td>{{libros.cota}}</td>
+                        <td>{{libros.titulo}}</td>
+                        <td>{{libros.anio}}</td>
+                        <td><a href="{{ libros.get_absolute_url }}" class="icon fa-search"></a></td>
+                    </tr>
+                    {% endfor %}
+
+                    {% for revistas in revista %}
+                    <tr>
+                        <td>{{revistas.cota}}</td>
+                        <td>{{revistas.titulo}}</td>
+                        <td>{{revistas.anio}}</td>
+                        <td><a href="{{ revistas.get_absolute_url }}" class="icon fa-search"></a></td>
+                    </tr>
+                    {% endfor %}
+
+                    {% for tesi in tesis %}
+                    <tr>
+                        <td>{{tesi.cota}}</td>
+                        <td>{{tesi.titulo}}</td>
+                        <td>{{tesi.anio}}</td>
+                        <td></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!--Siempre van dos div que cierran-->
+    </div>
+</div>
+{% endblock %}

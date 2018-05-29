@@ -29,7 +29,7 @@
 
                 <!-- Search -->
                     <section id="search" class="alt">
-                        <form method="post" action="{% url 'libros' %}">
+                        <form method="post" action="{% url 'consulta' %}">
                             {% csrf_token %}
                             <input type="text" name="palabra" id="palabra" placeholder="Buscar Libro" />
                         </form>
