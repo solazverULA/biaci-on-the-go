@@ -7,7 +7,7 @@ from libro.models import Biblioteca
 
 Options = (
         ('0', 'Titulo'),
-        ('1', 'Autor'),
+        ('1', 'Serie'),
         ('2', 'Cota'),
      )
 

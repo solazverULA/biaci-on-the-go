@@ -1,6 +1,6 @@
 from django.db import models
 
-from libro.models import Idioma
+from libro.models import Idioma, Biblioteca
 
 from django.urls import reverse  # Usado para generar URL
 
@@ -25,6 +25,7 @@ class Revista(models.Model):
     descripcion = models.TextField(max_length=1000)
     numero = models.CharField(max_length=30)
     serie = models.CharField(max_length=30)
+    biblioteca = models.ForeignKey(Biblioteca, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         """
@@ -34,9 +35,10 @@ class Revista(models.Model):
 
     def get_absolute_url(self):
         """
-        Devuelve la url para acceder a u registro de esta revista
+        Devuelve la url para acceder a un registro de esta revista
         """
-        return reverse('revista', args=[str(self.cota)])
+        return reverse('ejemplar_revista', args=[str(self.cota)])
+        #return "/revista/%i/" % self.cota
 
 
 class EjemplarRevista(models.Model):
@@ -67,4 +69,4 @@ class EjemplarRevista(models.Model):
         """
         Devuelve la url para acceder a un registro de este ejemplar
         """
-        return reverse('detalle-ejemplar', args=[str(self.id)])
+        return reverse('detalle-ejemplar-revista', args=[str(self.id)])

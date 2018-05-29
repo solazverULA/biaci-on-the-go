@@ -9,7 +9,7 @@
   <p><strong>Descripci&oacute;n:</strong> {{ ejemplar.descripcion }}</p>
   <p><strong>ISBN:</strong> {{ ejemplar.isbn }}</p>
   <p><strong>Idioma:</strong> {{ ejemplar.idioma }}</p>
-  <p><strong>Idioma:</strong> {{ ejemplar.biblioteca }}</p>
+  <p><strong>Biblioteca:</strong> {{ ejemplar.biblioteca }}</p>
   <p><strong>Materias:</strong> {% for materia in ejemplar.materia.all %} {{ materia }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
 
   <div style="margin-left:20px;margin-top:20px">
