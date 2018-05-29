@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'biaci_bd',
         'USER': 'postgres',
         'HOST': 'localhost',
-        'PASSWORD': '22538371'
+        'PASSWORD': '853247'
     }
 }
 
@@ -119,7 +119,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es-mx'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Caracas'
+
+DATETIME_FORMAT = '%d-%m-%Y %H:%M:%S'
+
+DATETIME_INPUT_FORMATS = '%d-%m-%Y %H:%M:%S'
 
 USE_I18N = True
 

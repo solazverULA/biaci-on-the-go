@@ -23,7 +23,6 @@
                     </thead>
                     <tbody>
                         {% for reservas in reserva %}
-                          {% if reservas.id_usuario == user %}
                             <tr>
                                 <td>{{reservas.id}}</td>
                                 <td>{{reservas.id_ejemplar}}</td>
@@ -32,7 +31,6 @@
                                 <td>{{reservas.fecha_caducidad}}</td>
                                 <td><a href="{% url 'eliminar' reservas.id %}" method="POST" class = "button">Eliminar</a></td>
                               </tr>
-                            {% endif %}
                         {% endfor %}
                     </tbody>
                 </table>
