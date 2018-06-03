@@ -4,11 +4,21 @@ from .models import Reserva
 
 class ReservaForm(forms.ModelForm):
 
+    #id_ejemplar = forms.CharField()
+
+    def __init__(self, *args, **kwargs):
+        self.ejemplar = kwargs.pop('ejemplar', None)
+        super(ReservaForm, self).__init__(*args, **kwargs)
+        self.fields['fecha_reserva'].widget.attrs['readonly'] = True
+        self.fields['fecha_caducidad'].widget.attrs['readonly'] = True
+        self.fields['id_ejemplar'].initial=self.ejemplar
+        self.fields['id_ejemplar'].widget = forms.HiddenInput()
+
 
     class Meta:
         model = Reserva
         fields = [
-            #'id_ejemplar',
+            'id_ejemplar',
             'fecha_reserva',
             'fecha_caducidad',
         ]
@@ -20,14 +30,7 @@ class ReservaForm(forms.ModelForm):
         }
 
         widgets = {
-            'id_ejemplar':forms.Select(attrs = {'class':'form-control'}),
+            'id_ejemplar':forms.TextInput(attrs = {'class':'form-control'}),
             'fecha_reserva':forms.TextInput(attrs = {'class':'form-control'}),
             'fecha_caducidad':forms.TextInput(attrs = {'class':'form-control'}),
         }
-
-    def __init__(self, *args, **kwargs):
-        id_ej = kwargs.pop('ejemplar', None)
-        super(ReservaForm, self).__init__(*args, **kwargs)
-        self.fields['fecha_reserva'].widget.attrs['readonly'] = True
-        self.fields['fecha_caducidad'].widget.attrs['readonly'] = True
-        #self.fields['ejemplar'].initial=id_ej

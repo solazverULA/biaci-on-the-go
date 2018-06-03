@@ -70,7 +70,9 @@ class EjemplaresTesis(View):
         except Tesis.DoesNotExist:
             raise Http404("La tesis no existe")
         # Falta agregarle al objeto el titulo y el autor
-        busqueda = Consulta(username=request.user,tipo_material="Libro")
+        for autor in tesis.autor.all():
+            autor
+        busqueda = Consulta(username=request.user,titulo=tesis.titulo,autor_nombre=autor.nombre,autor_apellido=autor.apellido,tipo_material="Tesis")
         busqueda.save()
         return render(
             request,

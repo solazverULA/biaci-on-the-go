@@ -31,6 +31,7 @@
                             {% if copy.estado == 'P' %} Prestado {% endif %}
                             {% if copy.estado == 'D' %} Disponible {% endif %}
                             {% if copy.estado == 'B' %} Bloqueado {% endif %}
+                            {% if copy.estado == 'R' %} Reservado {% endif %}
                         </td>
                         <td>
                             <a href="{{ libros.get_absolute_url }}" class="icon fa-search"></a>

@@ -8,11 +8,10 @@
             <h1>{% block heading %}Reserva de Libros<br>{% endblock %}</h1>
         </header>
         {% if user.is_authenticated %}
-            <h3>Reservar:</h3>
+            <h3>Reservar: {{ejemplar}}</h3>
             <form method="POST">
               {% csrf_token%}
                 {{form.as_p}}
-                <input type="hidden" name="id_ejemplar" id="id_ejemplar" value="{{ejemplar}}" />
               <button type="submit">Generar</button>
             </form>
           {% else %}

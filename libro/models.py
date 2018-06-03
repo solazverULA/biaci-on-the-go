@@ -8,6 +8,7 @@ ESTADO_EJEMPLAR = (
     ('P', 'Prestado'),
     ('D', 'Disponible'),
     ('B', 'Bloqueado'),  # ejemplares de consulta interna
+    ('R', 'Reservado'),
 )
 
 

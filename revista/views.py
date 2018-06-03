@@ -65,8 +65,8 @@ class EjemplaresVista(View):
             raise Http404("La Revista no existe")
 
         # book_id=get_object_or_404(Book, pk=pk)
-        # Falta agregarle al objeto el titulo y el autor
-        busqueda = Consulta(username=request.user,tipo_material="Libro")
+
+        busqueda = Consulta(username=request.user,titulo=revista.titulo,autor_nombre=" ",autor_apellido=" ",tipo_material="Revista")
         busqueda.save()
         return render(
             request,
