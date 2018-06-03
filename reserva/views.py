@@ -17,7 +17,6 @@ class ReservaLibros(View):
 
 
 def Reservar(request, id_ejemplar):
-    # request['ejemplar'] = id_ejemplar
 
     if request.method == 'POST':
 
@@ -25,7 +24,7 @@ def Reservar(request, id_ejemplar):
         form = ReservaForm(request.POST, request.FILES, instance=tap, ejemplar=id_ejemplar)
         if form.is_valid():
             form.save()
-            # Cambiar de estado al ejemplar que se reservo
+            # Cambiar de estado del ejemplar que se reservo
             ej = Ejemplar.objects.get(pk=id_ejemplar)
             ej.estado = 'R'
             ej.save()

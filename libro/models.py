@@ -95,6 +95,7 @@ class Libro(models.Model):
     isbn = models.CharField('ISBN', max_length=13,
                             help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn">ISBN number</a>')
     descripcion = models.TextField(max_length=1000)
+    vista = models.ImageField(default='/images/default.png', upload_to='libro', null=True)
     autor = models.ManyToManyField(Autor)
     materia = models.ManyToManyField(Materia)
     idioma = models.ForeignKey('Idioma', on_delete=models.SET_NULL, null=True)
