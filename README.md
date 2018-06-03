@@ -9,6 +9,7 @@
     - psql (PostgreSQL) 9.6.8
     - Dj-databse-url 0.5.0
     - Gunicorn 19.8.1
+    - Pillow 5.1.0
 
 ## Poner por defecto temporalmente python 3
     ~$ alias python=python3
