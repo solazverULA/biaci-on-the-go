@@ -89,7 +89,9 @@ class EjemplaresVista(View):
 
         # book_id=get_object_or_404(Book, pk=pk)
         # Falta agregarle al objeto el titulo y el autor
-        busqueda = Consulta(username=request.user,tipo_material="Libro")
+        for autor in libro.autor.all():
+            autor
+        busqueda = Consulta(username=request.user,titulo=libro.titulo,autor_nombre=autor.nombre,autor_apellido=autor.apellido,tipo_material="Libro")
         busqueda.save()
         return render(
             request,
