@@ -12,6 +12,7 @@
             <form method="POST">
               {% csrf_token%}
                 {{form.as_p}}
+                <input type="hidden" name="id_ejemplar" id="id_ejemplar" value="{{ejemplar}}" />
               <button type="submit">Generar</button>
             </form>
           {% else %}

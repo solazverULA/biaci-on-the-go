@@ -17,6 +17,7 @@ class ReservaLibros(View):
 
 def Reservar(request, id_ejemplar):
 
+    """
     def get_form_kwargs(self):
         kwargs = super(Reservar, self).get_form_kwargs()
 
@@ -24,18 +25,16 @@ def Reservar(request, id_ejemplar):
         kwargs.update({'ejemplar': self.id_ejemplar})
 
         return kwargs
-
-
+    """
     if request.method == 'POST':
         tap = Reserva(id_usuario=request.user)
-        form = ReservaForm(request.POST, id_ejemplar, request.FILES, instance=tap)
+        form = ReservaForm(request.POST, request.FILES, instance=tap)
         if form.is_valid():
-
             form.save(),
             return redirect ('lista')
     else:
         form = ReservaForm()
-        return render(request,'reservar.html',{'form':form})
+        return render(request,'reservar.html',{'form':form, 'ejemplar':id_ejemplar})
 
 
 def Reserva_delete(request,id_reserva):
