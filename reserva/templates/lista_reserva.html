@@ -27,7 +27,7 @@
                                 <td>{{reservas.id_usuario}}</td>
                                 <td>{{reservas.fecha_reserva}}</td>
                                 <td>{{reservas.fecha_caducidad}}</td>
-                                <td><a href="{% url 'eliminar' reservas.id %}" method="POST" class = "button">Eliminar</a></td>
+                                <td><a href="{% url 'eliminar' reservas.id %}" method="POST" class="icon fa-trash"></a></td>
                               </tr>
                         {% endfor %}
                     </tbody>

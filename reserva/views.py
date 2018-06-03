@@ -20,15 +20,7 @@ def Reservar(request, id_ejemplar):
     # request['ejemplar'] = id_ejemplar
 
     if request.method == 'POST':
-        """
-        def get_form_kwargs(self):
-            kwargs = super(Reservar, self).get_form_kwargs()
-            # La variable que queremos pasar al formulario
-            kwargs.update({'ejemplar': self.id_ejemplar})
-            return kwargs
-        
-        ejm= kwargs['ejemplar']
-        """
+
         tap = Reserva(id_usuario=request.user)
         form = ReservaForm(request.POST, request.FILES, instance=tap, ejemplar=id_ejemplar)
         if form.is_valid():
