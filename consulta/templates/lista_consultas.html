@@ -7,7 +7,6 @@
         <header class="main">
             <h1>{% block heading %}Sugerencias<br>{% endblock %}</h1>
         </header>
-        {% if user.is_authenticated %}
             <div class="table-wrapper">
                 <table>
                     <thead>
@@ -28,10 +27,6 @@
                     </tbody>
                 </table>
             </div>
-          {% else %}
-              <h3>Por favor inicie sesión para continuar. </h3>
-              <a href="{% url 'login' %}" class = "button">Login</a></td>
-          {% endif %}
     </section>
     <!--Siempre van dos div que cierran-->
     </div>

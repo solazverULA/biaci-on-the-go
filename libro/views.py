@@ -89,15 +89,14 @@ class EjemplaresVista(View):
 
         # book_id=get_object_or_404(Book, pk=pk)
         # Falta agregarle al objeto el titulo y el autor
-        for autor in libro.autor.all():
-            autor
-        busqueda = Consulta(username=request.user,titulo=libro.titulo,autor_nombre=autor.nombre,autor_apellido=autor.apellido,tipo_material="Libro")
-        busqueda.save()
-        return render(
-            request,
-            'ejemplar.html',
-            context={'ejemplar': libro, }
-        )
+        # Verifico si el titulo no esta en las consultas para agregarlo si no esta 
+        if Consulta.objects.filter(username=request.user, titulo=libro.titulo).exists() == False:
+            for autor in libro.autor.all():
+                autor
+            busqueda = Consulta(username=request.user,titulo=libro.titulo,autor_nombre=autor.nombre,autor_apellido=autor.apellido,tipo_material="Libro")
+            busqueda.save()
+        
+        return render(request,'ejemplar.html',context={'ejemplar': libro, })
 
 
 class LibrosVista(View):

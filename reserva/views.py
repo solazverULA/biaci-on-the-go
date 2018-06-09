@@ -4,17 +4,15 @@ from django.views.generic import View, CreateView
 from .models import Reserva, Ejemplar
 from .forms import ReservaForm
 
-
 # Create your views here.
-
 
 class ReservaLibros(View):
     def get(self, request, *args, **kwargs):
-        context = {
-            'reserva': Reserva.objects.filter(id_usuario=request.user),
-        }
-        return TemplateResponse(request, 'lista_reserva.html', context)
-
+        if request.user.is_authenticated:
+            context = {'reserva': Reserva.objects.filter(id_usuario=request.user),}
+            return TemplateResponse(request, 'lista_reserva.html', context)
+        else:
+            return redirect('login')
 
 def Reservar(request, id_ejemplar):
 
