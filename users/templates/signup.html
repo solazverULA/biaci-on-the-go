@@ -6,18 +6,20 @@
 
 {% block body %}
 <section id="banner">
-		            <div class="content">
-		                <header>
-		                    <h1>{% block heading %}Registro de Usuario{% endblock %}</h1>
-		                    <p></p>
-		                </header>
-		                <form method="post">
-						  {% csrf_token %}
-						  {{ form.as_p }}
-						  <button type="submit">Sign up</button>
-						</form>
-		            </div>         
-		        </section>
+	<div class="content" align="center" >
+		<header>
+			<h1>{% block heading %}Registro de Usuario{% endblock %}</h1>
+		</header>
+		<div class="6u$ 12u$(medium)" >
+			<form method="post">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<button type="submit">Sign up</button>
+			</form>
+		</div>
+	</div>         
+</section>
 		    </div>
 		</div>
 {% endblock %}
+

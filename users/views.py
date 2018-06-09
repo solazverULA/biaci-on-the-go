@@ -12,10 +12,10 @@ class SignUp(generic.CreateView):
     template_name = 'signup.html'
 
 class HomePageView(TemplateView):
-    template_name = 'home.html'
+    template_name = 'home.html'    
 
 def PerfilView(request):
-	if request.method == "GET" and request.user.is_authenticated and request.user.is_superuser == False:
+	if request.method == "GET" and request.user.is_authenticated:
 		usuario = CustomUser.objects.get(username=request.user)
 		userdata = CompleteUser.objects.get(customuser_ptr_id=usuario.id)
 		return render(request,'perfil.html',{'userdata':userdata},)

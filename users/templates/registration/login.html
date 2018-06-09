@@ -16,30 +16,23 @@
 		</div>
 	{% else %}
 		<section id="banner">
-		            <div class="content">
-		                <header>
-		                    <h1>{% block heading %}Inicio de sesión{% endblock %}</h1>
-		                    <p></p>
-		                </header>
-		                <form method="post">
-			  				{% csrf_token %}
-			  				{{ form.as_p }}
-			 				<button type="submit" class="button special">Login</button> 
-			 				<a class="button" href="{% url 'signup' %}"> Sign Up</a>
-						</form>
-						
-		            </div>         
-		        </section>
+	        <div class="content" align="center">
+	            <header>
+	                <h1>{% block heading %}Inicio de sesión{% endblock %}</h1>
+	                <p></p>
+	            </header>
+	       		<div class="6u$ 12u$(medium)">
+		            <form method="post">
+		  				{% csrf_token %}
+		  				{{ form.as_p }}
+		 				<button type="submit" class="button special">Login</button> 
+		 				<a class="button" href="{% url 'signup' %}"> Sign Up</a>
+					</form>
+				</div>
+	        </div>         
+		</section>
 		    </div>
 		</div>
 	{% endif %}
 {% endblock %}
-<!-- templates/home.html <h1>Django Login Mega-Tutorial</h1>
-{% if user.is_authenticated %}
 
-	<p>Hi {{ user.username }}
-	<p><a href="{% url 'logout' %}">Log out</a></p>
-{% else %}
-	<p><a href="{% url 'signup' %}">Sign Up</a></p>
-	<p><a href="{% url 'login' %}">Log In </a></p>
-{% endif %}-->
