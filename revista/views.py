@@ -4,13 +4,19 @@ from django.http import HttpResponseRedirect
 
 from django.shortcuts import render, get_object_or_404
 
+
 from django.views.generic import View
+
 
 from revista.models import Revista
 
-from .forms import ConsultaRevistaForm
+from reserva.models import Reserva
 
 from consulta.models import Consulta
+
+
+from .forms import ConsultaRevistaForm
+
 
 def buscador(request):
 
@@ -64,10 +70,13 @@ class EjemplaresVista(View):
         except Revista.DoesNotExist:
             raise Http404("La Revista no existe")
 
-        # book_id=get_object_or_404(Book, pk=pk)
+        # Verifico que no haya ningun ejemplar reservado y lo envio en la vista
+        #reserva = Reserva.objects.filter(id_ejemplar__revista__cota=pk)
+        #reservado = reserva.exists()
+
         # Verifico si el titulo no esta en las consultas para agregarlo si no esta 
         if Consulta.objects.filter(username=request.user, titulo=revista.titulo).exists() == False:
             busqueda = Consulta(username=request.user,titulo=revista.titulo,autor_nombre=" ",autor_apellido=" ",tipo_material="Revista")
             busqueda.save()
             
-        return render(request,'ejemplar_revista.html',context={'ejemplar': revista, })
+        return render(request,'ejemplar_revista.html',context={'ejemplar': revista,})

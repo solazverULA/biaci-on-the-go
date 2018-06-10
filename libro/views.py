@@ -13,6 +13,8 @@ from tesis.models import Tesis
 
 from revista.models import Revista
 
+from reserva.models import Reserva
+
 
 from .forms import ConsultaLibroForm
 
@@ -87,16 +89,19 @@ class EjemplaresVista(View):
         except Libro.DoesNotExist:
             raise Http404("El libro no existe")
 
-        # book_id=get_object_or_404(Book, pk=pk)
+        # Verifico que no haya ningun ejemplar reservado y lo envio en la vista
+        reserva = Reserva.objects.filter(id_ejemplar__libro__cota=pk)
+        reservado = reserva.exists()
+
         # Falta agregarle al objeto el titulo y el autor
         # Verifico si el titulo no esta en las consultas para agregarlo si no esta 
         if Consulta.objects.filter(username=request.user, titulo=libro.titulo).exists() == False:
             for autor in libro.autor.all():
                 autor
-            busqueda = Consulta(username=request.user,titulo=libro.titulo,autor_nombre=autor.nombre,autor_apellido=autor.apellido,tipo_material="Libro")
+            busqueda = Consulta(username=request.user, titulo=libro.titulo, autor_nombre=autor.nombre, autor_apellido=autor.apellido, tipo_material="Libro")
             busqueda.save()
         
-        return render(request,'ejemplar.html',context={'ejemplar': libro, })
+        return render(request, 'ejemplar.html', context={'ejemplar': libro, 'reservado': reservado,})
 
 
 class LibrosVista(View):

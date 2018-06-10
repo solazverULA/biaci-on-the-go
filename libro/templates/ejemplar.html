@@ -37,7 +37,7 @@
                         </td>
                         <td>
                             <a href="{{ libros.get_absolute_url }}" class="icon fa-search"></a>
-                            {% if copy.estado == 'D' %}
+                            {% if copy.estado == 'D' and reservado == False %}
                                 <a href="{% url 'reservar' copy.id %}" class="icon fa-clock-o"></a>
                             {% endif %}
                         </td>
