@@ -39,6 +39,7 @@ def Reservar(request, id_ejemplar):
 
 
 def Reserva_delete(request, id_reserva):
+
     reserva = Reserva.objects.get(id=id_reserva)
     reserva.delete()
     return redirect('lista')
