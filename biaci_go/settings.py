@@ -93,7 +93,7 @@ DATABASES = {
         'NAME': 'biaci_bd',
         'USER': 'postgres',
         'HOST': 'localhost',
-        'PASSWORD': '22538371'
+        'PASSWORD': '257498'
     }
 }
 
@@ -151,3 +151,11 @@ STATICFILES_DIRS = (
 )
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER ='biacionthego@gmail.com'
+EMAIL_HOST_PASSWORD = '1234$Qwer'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
