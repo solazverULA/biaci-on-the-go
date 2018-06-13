@@ -4,6 +4,8 @@ from datetime import datetime, timedelta
 
 from libro.models import Ejemplar
 
+from revista.models import EjemplarRevista
+
 from users.models import CustomUser
 
 from django.urls import reverse  # Usado para generar URL
@@ -15,12 +17,12 @@ ESTADO_RESERVA = (
     ('E', 'Eliminado'),
 )
 
-
 class Reserva(models.Model):
 
     fecha_reserva = models.DateTimeField(default=datetime.now)
     fecha_caducidad = models.DateTimeField(default=datetime.now()+timedelta(hours=10))
     id_ejemplar = models.ForeignKey(Ejemplar, on_delete=models.CASCADE, null=True)
+    id_ejemplar_revista = models.ForeignKey(EjemplarRevista, on_delete=models.CASCADE, null=True)
     id_usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True)
     estado = models.CharField(max_length=1, choices=ESTADO_RESERVA, blank=True, default='A')
 
@@ -61,8 +63,3 @@ class HistorialReserva(models.Model):
         Devuelve la url para acceder a un registro de esta reserva
         """
         return reverse('historial_reserva', args=[str(self.id)])
-
-
-
-
-
