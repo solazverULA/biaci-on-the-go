@@ -4,7 +4,7 @@ from django.template.response import TemplateResponse
 
 from django.views.generic import View, CreateView
 
-from .models import Reserva, Ejemplar
+from .models import Reserva, Ejemplar, EjemplarRevista
 
 from .forms import ReservaForm
 
@@ -18,25 +18,30 @@ class ReservaLibros(View):
             return redirect('login')
 
 
-def Reservar(request, id_ejemplar):
+def Reservar(request, id_ejemplar, tipo_material):
 
     if request.method == 'POST':
-
         tap = Reserva(id_usuario=request.user)
-        form = ReservaForm(request.POST, request.FILES, instance=tap, ejemplar=id_ejemplar)
+        form = ReservaForm(request.POST, request.FILES, instance=tap)
         if form.is_valid():
             form.save()
             # Cambiar de estado del ejemplar que se reservo
-            ej = Ejemplar.objects.get(pk=id_ejemplar)
+            if tipo_material == 1:
+                # Si es libro #
+                ej = Ejemplar.objects.get(pk=id_ejemplar)
+            if tipo_material == 2:
+                # Si es revista #
+                ej = EjemplarRevista.objects.get(pk=id_ejemplar)
             ej.estado = 'R'
             ej.save()
             return redirect('lista')
-
     else:
-        form = ReservaForm(ejemplar=id_ejemplar)
-        ej = Ejemplar.objects.get(pk=id_ejemplar)
+        form = ReservaForm(ejemplar=id_ejemplar,tipo=tipo_material)
+        if tipo_material == 1:
+            ej = Ejemplar.objects.get(pk=id_ejemplar)
+        if tipo_material == 2:
+            ej = EjemplarRevista.objects.get(pk=id_ejemplar)
         return render(request, 'reservar.html', {'form': form, 'ejemplar': ej})
-
 
 def Reserva_delete(request, id_reserva):
 

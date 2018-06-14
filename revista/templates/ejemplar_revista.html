@@ -30,11 +30,12 @@
                             {% if copy.estado == 'P' %} Prestado {% endif %}
                             {% if copy.estado == 'D' %} Disponible {% endif %}
                             {% if copy.estado == 'B' %} Bloqueado {% endif %}
+                            {% if copy.estado == 'R' %} Reservado {% endif %}
                         </td>
                         <td>
                             <a href="{{ revistas.get_absolute_url }}" class="icon fa-search"></a>
                             {% if copy.estado == 'D' %}
-                                <a href="{% url 'reservar' copy.id %}" class="icon fa-clock-o"></a>
+                                <a href="{% url 'reservar' copy.id 2 %}" class="icon fa-clock-o"></a>
                             {% endif %}
                         </td>
                     </tr>
