@@ -5,23 +5,34 @@
 
     <section>
         <header class="main">
-            <h1>{% block heading %}Sugerencias<br>{% endblock %}</h1>
+            <h1>{% block heading %}Ultimas Consultas<br>{% endblock %}</h1>
         </header>
             <div class="table-wrapper">
                 <table>
                     <thead>
                         <tr>
+                            <th>Cota</th>
                             <th>Titulo</th>
                             <th>Autor</th>
                             <th>Tipo de material</th>
+                            <th> Fecha </th>
+                            <th> Accion </th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for consultas in consulta %}
                             <tr>
+                                <td>{{consultas.cota}}</td>
                                 <td>{{consultas.titulo}}</td>
+                              {% if consultas.tipo_material == 'Libro' or consultas.tipo_material == 'Tesis'%}
                                 <td>{{consultas.autor_apellido}},{{consultas.autor_nombre}}</td>
+                              {% endif %}
+                              {% if consultas.tipo_material == 'Revista' %}
+                                <td>---</td>
+                              {% endif %}
                                 <td>{{consultas.tipo_material}}</td>
+                                <td>{{consultas.fecha}}</td>
+                                <td><a href="#" class="icon fa-search"></a></td>
                               </tr>
                         {% endfor %}
                     </tbody>

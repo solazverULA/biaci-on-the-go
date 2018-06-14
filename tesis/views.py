@@ -74,7 +74,7 @@ class EjemplaresTesis(View):
         if Consulta.objects.filter(username=request.user, titulo=tesis.titulo).exists() == False:
             for autor in tesis.autor.all():
                 autor
-            busqueda = Consulta(username=request.user,titulo=tesis.titulo,autor_nombre=autor.nombre,autor_apellido=autor.apellido,tipo_material="Tesis")
+            busqueda = Consulta(username=request.user,cota=tesis.cota,titulo=tesis.titulo,autor_nombre=autor.nombre,autor_apellido=autor.apellido,tipo_material="Tesis")
             busqueda.save()
         
         return render(request,'ejemplar_tesis.html',context={'ejemplar': tesis, })
