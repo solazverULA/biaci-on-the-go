@@ -14,7 +14,10 @@ ESTADO_EJEMPLAR = (
 
 class Biblioteca(models.Model):
     """
-    Modelo que representa un biblioteca de la ULA (ej. Biaci, Trujillo, etc).
+    Modelo que representa un biblioteca de la ULA
+
+    :Example:
+        Biaci, Trujillo, etc.
     """
     codigo = models.CharField(max_length=10, primary_key=True)
     nombre = models.CharField(max_length=100)
@@ -46,7 +49,10 @@ class Materia(models.Model):
 
 class Idioma(models.Model):
     """
-    Modelo que representa u lenguaje (ej. español, ingles, etc.)
+    Modelo que representa u lenguaje
+
+    :Example:
+        ej. español, ingles, etc.
     """
     nombre = models.CharField(max_length=50)
 
@@ -79,6 +85,8 @@ class Autor(models.Model):
     def __str__(self):
         """
         Cadena para representar el objeto.
+        :Example:
+            Apellido, Nombre
         """
         return '{0}, {1}'.format(self.apellido, self.nombre)
 
@@ -109,14 +117,14 @@ class Libro(models.Model):
 
     def get_absolute_url(self):
         """
-        Devuelve la url para acceder a u registro de este libro
+        Devuelve la url para acceder a un registro de este libro
         """
         return reverse('ejemplar', args=[str(self.cota)])
 
 
 class Ejemplar(models.Model):
     """
-        Modelo que representa un ejemplar de un libro
+    Modelo que representa un ejemplar de un libro
     """
     ejemplar = models.CharField(
         max_length=4,
