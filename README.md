@@ -14,6 +14,8 @@
     - Dj-databse-url 0.5.0
     - Gunicorn 19.8.1
     - Pillow 5.1.0
+    - Selenium 1.11.0
+    - Sphinx 1.7.5
 
 ## Poner por defecto temporalmente python 3
     ~$ alias python=python3
@@ -41,3 +43,6 @@
     ~$ heroku ps:scale web=1
     ~$ DEBUG = False
 
+## Para generar documentacion
+   ~$ make html
+   ~$ make latexpdf (teniendo instalado latex y latexmk)

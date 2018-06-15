@@ -1,0 +1,8 @@
+\begin{sphinxtheindex}
+\def\bigletter#1{{\Large\sffamily#1}\nopagebreak\vspace{1mm}}
+
+  \bigletter R
+  \item reserva.views (m\IeC {\'o}dulo), \hyperpage{3}
+  \item ReservaLibros (clase en reserva.views), \hyperpage{3}
+
+\end{sphinxtheindex}
