@@ -98,7 +98,7 @@ class EjemplaresVista(View):
         if Consulta.objects.filter(username=request.user, titulo=libro.titulo).exists() == False:
             for autor in libro.autor.all():
                 autor
-            busqueda = Consulta(username=request.user, titulo=libro.titulo, autor_nombre=autor.nombre, autor_apellido=autor.apellido, tipo_material="Libro")
+            busqueda = Consulta(username=request.user,cota=libro.cota, titulo=libro.titulo, autor_nombre=autor.nombre, autor_apellido=autor.apellido, tipo_material="Libro")
             busqueda.save()
 
         return render(request, 'ejemplar.html', context={'ejemplar': libro, 'reservado': reservado,})

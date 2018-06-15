@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}BIACI on the GO{% endblock %}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  </head>
+  <body>
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                    <header id="header">
+                        <a href= "{% url 'home' %}" class="logo"><strong>BIACI</strong> ON THE GO</a>
+                        <ul class="icons">
+                            <li><a href="https://twitter.com/BBiaci" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                            <li><a href="#" class="icon fa-linkedin"><span class="label">Snapchat</span></a></li>
+                            <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                            <li><a href="http://www.serbi.ula.ve/biaci/" class="icon fa-globe"><span class="label">Medium</span></a></li>
+                        </ul>
+                    </header>
+                    {% block body %}{% endblock %}
+                </div>
+
+    </div>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/skel.min.js' %}"></script>
+    <script src="{% static 'js/util.js' %}"></script>
+	<!--[if lte IE 8]<script src="{% static 'js/ie/respond.min.js' %}"></script><![endif]-->
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
