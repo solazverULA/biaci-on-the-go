@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6b729ae-0ef5-4cb8-b736-013b486ed50d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/prestamo/templates/lista_prestamos.html" beforeDir="false" afterPath="$PROJECT_DIR$/prestamo/templates/lista_prestamos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libro/templates/consulta.html" beforeDir="false" afterPath="$PROJECT_DIR$/libro/templates/consulta.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tesis/templates/tesis.html" beforeDir="false" afterPath="$PROJECT_DIR$/tesis/templates/tesis.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,20 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="lista_prestamos.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/prestamo/templates/lista_prestamos.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="23" column="65" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="consulta.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="consulta.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/libro/templates/consulta.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="31" column="41" lean-forward="true" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="70" />
+            <state relative-caret-position="418">
+              <caret line="49" column="48" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
               <folding>
                 <element signature="e#150#158#0" expanded="true" />
               </folding>
@@ -34,20 +26,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ejemplar.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libro/templates/ejemplar.html">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libro/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="39" column="67" selection-start-line="39" selection-end-line="40" />
+            <state relative-caret-position="248">
+              <caret line="154" column="31" selection-start-line="154" selection-start-column="31" selection-end-line="154" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#53#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="libros.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libro/templates/libros.html">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libro/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="29" />
+            <state relative-caret-position="114">
+              <caret line="8" column="57" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -111,10 +106,8 @@
         <option value="$PROJECT_DIR$/biaci_go/urls.py" />
         <option value="$PROJECT_DIR$/tesis/templates/buscar_tesis.html" />
         <option value="$PROJECT_DIR$/tesis/urls.py" />
-        <option value="$PROJECT_DIR$/tesis/templates/tesis.html" />
         <option value="$PROJECT_DIR$/tesis/views.py" />
         <option value="$PROJECT_DIR$/tesis/templates/ejemplar_tesis.html" />
-        <option value="$PROJECT_DIR$/libro/templates/consulta.html" />
         <option value="$PROJECT_DIR$/reserva/forms.py" />
         <option value="$PROJECT_DIR$/reserva/templates/reservar.html" />
         <option value="$PROJECT_DIR$/reserva/templates/lista_reserva.html" />
@@ -144,6 +137,8 @@
         <option value="$PROJECT_DIR$/consulta/models.py" />
         <option value="$PROJECT_DIR$/consulta/urls.py" />
         <option value="$PROJECT_DIR$/prestamo/templates/lista_prestamos.html" />
+        <option value="$PROJECT_DIR$/tesis/templates/tesis.html" />
+        <option value="$PROJECT_DIR$/libro/templates/consulta.html" />
       </list>
     </option>
   </component>
@@ -308,31 +303,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tesis/templates/ejemplar_tesis.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tesis/templates/tesis.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tesis/templates/buscar_tesis.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tesis/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -510,16 +484,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libro/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2754">
-          <caret line="154" column="31" selection-start-line="154" selection-start-column="31" selection-end-line="154" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libro/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -550,13 +514,6 @@
     <entry file="file://$PROJECT_DIR$/consulta/templates/lista_consultas.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-258" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libro/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="8" column="57" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="57" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/users/templates/home.html">
@@ -605,13 +562,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libro/templates/consulta.html">
+    <entry file="file://$PROJECT_DIR$/prestamo/templates/lista_prestamos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="31" column="41" lean-forward="true" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="70" />
-          <folding>
-            <element signature="e#150#158#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="437">
+          <caret line="23" column="65" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -629,10 +583,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prestamo/templates/lista_prestamos.html">
+    <entry file="file://$PROJECT_DIR$/tesis/templates/tesis.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="65" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
+        <state relative-caret-position="323">
+          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tesis/templates/ejemplar_tesis.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tesis/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libro/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="8" column="57" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libro/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="154" column="31" selection-start-line="154" selection-start-column="31" selection-end-line="154" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libro/templates/consulta.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="49" column="48" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
+          <folding>
+            <element signature="e#150#158#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -47,7 +47,7 @@
                             <td>{{tesi.cota}}</td>
                             <td>{{tesi.titulo}}</td>
                             <td>{{tesi.anio}}</td>
-                            <td></td>
+                            <td><a href="{{ tesi.get_absolute_url }}" class="icon fa-search"></a></td>
                         </tr>
                     {% endfor %}
                 {% endif %}

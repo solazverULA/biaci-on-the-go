@@ -19,11 +19,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for revistas in consulta %}
+                    {% for tesis in consulta %}
                     <tr>
-                        <td>{{revistas.cota}}</td>
-                        <td>{{revistas.titulo}}</td>
-                        <td>{{revistas.area}}</td>
+                        <td>{{tesis.cota}}</td>
+                        <td>{{tesis.titulo}}</td>
+                        <td>{{tesis.area}}</td>
                         <td><a href="{{ revistas.get_absolute_url }}" class="icon fa-search"></a></td>
                     </tr>
                     {%empty%}
