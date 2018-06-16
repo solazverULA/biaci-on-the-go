@@ -10,9 +10,14 @@ from .forms import ReservaForm
 
 
 class ReservaLibros(View):
+
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            context = {'reserva': Reserva.objects.filter(id_usuario=request.user),}
+            context = {
+                'reserva': Reserva.objects.filter(id_usuario=request.user),
+                # Se agrega para saber si existen reservas del usuario, si no mostrar otro mensaje
+                'reserva_vacia': Reserva.objects.filter(id_usuario=request.user).exists(),
+            }
             return TemplateResponse(request, 'lista_reserva.html', context)
         else:
             return redirect('login')
@@ -36,7 +41,7 @@ def Reservar(request, id_ejemplar, tipo_material):
             ej.save()
             return redirect('lista')
     else:
-        form = ReservaForm(ejemplar=id_ejemplar,tipo=tipo_material)
+        form = ReservaForm(ejemplar=id_ejemplar, tipo=tipo_material)
         if tipo_material == 1:
             ej = Ejemplar.objects.get(pk=id_ejemplar)
         if tipo_material == 2:

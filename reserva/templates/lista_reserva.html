@@ -19,6 +19,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                    {% if query == True %}
                         {% for reservas in reserva %}
                             <tr>
                               {% if reservas.id_ejemplar != null %}
@@ -31,6 +32,11 @@
                                 <td><a href="{% url 'eliminar' reservas.id %}" method="POST" class="icon fa-trash"></a></td>
                               </tr>
                         {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="4" class="align-center">No tienes ning&uacute;n ejemplar reservado.</td>
+                        </tr>
+                    {% endif %}
                     </tbody>
                 </table>
             </div>
