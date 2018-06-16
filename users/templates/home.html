@@ -19,6 +19,20 @@
                 <img src="{% static '/images/1.jpg' %}" alt="" />
             </span>
         </section>
+        <section>
+          <div class="row 180% uniform">
+                {% for consultas in consulta %}
+                <center>
+                  <div class="box">
+                        <h3>{{consultas.titulo}}</h3>
+                        <h4>{{ consultas.cota }}</h4>
+                        <h4>{{ consultas.tipo_material }}</h4>
+                        <a href="#" class="button special icon fa-search" >Ver</a></li>
+                  </div>
+                </center>
+                {% endfor %}
+            </div>
+        </section>
     </div>
 </div>
 {% endblock %}

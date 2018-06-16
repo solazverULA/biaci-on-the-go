@@ -5,7 +5,8 @@ from django.urls import reverse_lazy
 from django.views import generic
 from .forms import CustomUserCreationForm
 from .models import CompleteUser, CustomUser
-
+from consulta.models import Consulta
+from django.template.response import TemplateResponse
 
 class SignUp(generic.CreateView):
     form_class = CustomUserCreationForm
@@ -13,8 +14,13 @@ class SignUp(generic.CreateView):
     template_name = 'signup.html'
 
 
-class HomePageView(TemplateView):
-    template_name = 'home.html'
+def HomePageView(request):
+        context = {'consulta' : Consulta.objects.raw('''SELECT 1 as id, titulo, COUNT(titulo) as total
+                                                        FROM consulta_consulta
+                                                        GROUP BY titulo
+                                                        ORDER BY total
+                                                        DESC LIMIT 10'''),}
+        return TemplateResponse(request, 'home.html', context)
 
 
 def PerfilView(request):
