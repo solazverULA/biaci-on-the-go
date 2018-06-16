@@ -27,7 +27,7 @@
                         <h3>{{consultas.titulo}}</h3>
                         <h4>{{ consultas.cota }}</h4>
                         <h4>{{ consultas.tipo_material }}</h4>
-                        <a href="#" class="button special icon fa-search" >Ver</a></li>
+                        <a href="{{ consultas.get_absolute_url }}" class="button special icon fa-search" >Ver</a></li>
                   </div>
                 </center>
                 {% endfor %}

@@ -44,5 +44,5 @@
     ~$ DEBUG = False
 
 ## Para generar documentacion
-   ~$ make html
-   ~$ make latexpdf (teniendo instalado latex y latexmk)
+    ~$ make html
+    ~$ make latexpdf (teniendo instalado latex y latexmk)

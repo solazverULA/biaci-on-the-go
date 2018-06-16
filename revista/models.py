@@ -1,6 +1,6 @@
 from django.db import models
 
-from libro.models import Idioma, Biblioteca
+from libro.models import Idioma, Biblioteca, Materia
 
 from django.urls import reverse  # Usado para generar URL
 
@@ -10,6 +10,7 @@ ESTADO_EJEMPLAR = (
     ('P', 'Prestado'),
     ('D', 'Disponible'),
     ('B', 'Bloqueado'),  # ejemplares de consulta interna
+    ('R', 'Reservado'),
 )
 
 
@@ -26,6 +27,8 @@ class Revista(models.Model):
     numero = models.CharField(max_length=30)
     serie = models.CharField(max_length=30)
     biblioteca = models.ForeignKey(Biblioteca, on_delete=models.SET_NULL, null=True)
+    area = models.CharField(max_length=30)
+
 
     def __str__(self):
         """

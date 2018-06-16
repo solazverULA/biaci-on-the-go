@@ -11,9 +11,7 @@ from django.urls import reverse  # Usado para generar URL
 from django.core.validators import RegexValidator
 
 ESTADO_EJEMPLAR = (
-    ('P', 'Prestado'),
-    ('D', 'Disponible'),
-    ('B', 'Bloqueado'),  # ejemplares de consulta interna
+    ('B', 'Bloqueado'),  # ejemplares de consulta interna, la tesis es solo de este estado
 )
 
 
