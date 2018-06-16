@@ -28,7 +28,32 @@ class Revista(models.Model):
     serie = models.CharField(max_length=30)
     biblioteca = models.ForeignKey(Biblioteca, on_delete=models.SET_NULL, null=True)
     area = models.CharField(max_length=30)
+    url = models.URLField()
 
+    upload_path = 'images/portada'
+    file_save_dir = '/images/portada/'
+
+    # Campos para portada de libro
+    imagen = models.ImageField(upload_to=upload_path, default='/images/portada/default.png')
+    imagen_url = models.URLField()
+
+    def save(self, *args, **kwargs):
+        """
+        Funcion que descargar la portada del libro pasada por el url y lo guarda localmente
+
+        :param args: Parametro Vacio
+        :param kwargs: Parametro Vacio
+        :return: una funcion de guardar.
+        """
+        if self.imagen_url:
+            import urllib, os, urllib.request
+            from urllib.parse import urlparse
+            filename = urlparse(self.imagen_url).path.split('/')[-1]
+            # Guarda la imagen localmente despues de descargarla
+            urllib.request.urlretrieve(self.imagen_url, os.path.join('static/images/portada/', filename))
+            # Le guarda la ruta en el modelo donde esta la imagen local
+            self.imagen = os.path.join(self.upload_path, os.path.join(self.file_save_dir, filename))
+            super(Revista, self).save()
 
     def __str__(self):
         """

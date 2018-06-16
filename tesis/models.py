@@ -29,7 +29,7 @@ class Tesis(models.Model):
     area = models.CharField(max_length=30)
     estado = models.CharField(max_length=1, choices=ESTADO_EJEMPLAR, blank=True, default='D')
     biblioteca = models.ForeignKey(Biblioteca, on_delete=models.SET_NULL, null=True)
-
+    url = models.URLField()
 
     def __str__(self):
         """

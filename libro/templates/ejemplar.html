@@ -11,7 +11,7 @@
   <p><strong>Idioma:</strong> {{ ejemplar.idioma }}</p>
   <p><strong>Biblioteca:</strong> {{ ejemplar.biblioteca }}</p>
   <p><strong>Materias:</strong> {% for materia in ejemplar.materia.all %} {{ materia }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
-<div class="4u"><span class="image fit"><a href="#" class="image"><img src="{% static ejemplar.vista.url  %}" alt="" /></a></span></div>
+<div class="4u"><span class="image fit"><a href="{{ejemplar.url }}" class="image"><img src="{% static ejemplar.imagen.url  %}" alt="" /></a></span></div>
 
 
   <div style="margin-left:20px;margin-top:20px">

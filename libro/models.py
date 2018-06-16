@@ -103,11 +103,37 @@ class Libro(models.Model):
     isbn = models.CharField('ISBN', max_length=13,
                             help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn">ISBN number</a>')
     descripcion = models.TextField(max_length=1000)
-    vista = models.ImageField(default='/images/default.png', upload_to='libro', null=True)
-    autor = models.ManyToManyField(Autor)
-    materia = models.ManyToManyField(Materia)
     idioma = models.ForeignKey('Idioma', on_delete=models.SET_NULL, null=True)
     biblioteca = models.ForeignKey('Biblioteca', on_delete=models.SET_NULL, null=True)
+    url = models.URLField()
+
+    upload_path = 'images/portada'
+    file_save_dir = '/images/portada/'
+
+    # Campos para portada de libro
+    imagen = models.ImageField(upload_to=upload_path, default='/images/portada/default.png')
+    imagen_url = models.URLField()
+
+    def save(self, *args, **kwargs):
+        """
+        Funcion que descargar la portada del libro pasada por el url y lo guarda localmente
+
+        :param args: Parametro Vacio
+        :param kwargs: Parametro Vacio
+        :return: una funcion de guardar.
+        """
+        if self.imagen_url:
+            import urllib, os, urllib.request
+            from urllib.parse import urlparse
+            filename = urlparse(self.imagen_url).path.split('/')[-1]
+            # Guarda la imagen localmente despues de descargarla
+            urllib.request.urlretrieve(self.imagen_url, os.path.join('static/images/portada/', filename))
+            # Le guarda la ruta en el modelo donde esta la imagen local
+            self.imagen = os.path.join(self.upload_path, os.path.join(self.file_save_dir, filename))
+            super(Libro, self).save()
+
+    autor = models.ManyToManyField(Autor)
+    materia = models.ManyToManyField(Materia)
 
     def __str__(self):
         """
@@ -120,6 +146,7 @@ class Libro(models.Model):
         Devuelve la url para acceder a un registro de este libro
         """
         return reverse('ejemplar', args=[str(self.cota)])
+
 
 
 class Ejemplar(models.Model):

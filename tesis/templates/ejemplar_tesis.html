@@ -10,6 +10,7 @@
     <p><strong>Area:</strong> {{ ejemplar.area }}</p>
     <p><strong>Año:</strong> {{ ejemplar.anio }}</p>
     <p><strong>Biblioteca:</strong> {{ ejemplar.biblioteca }}</p>
+    <p><strong>Vista Previa:</strong> <a href="{{ejemplar.url }}" >{{ ejemplar.titulo }}</a></p>
     <p><strong>Estado:</strong>
     {% if ejemplar.estado == 'P' %} Prestado {% endif %}
     {% if ejemplar.estado == 'D' %} Disponible {% endif %}
