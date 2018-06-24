@@ -17,6 +17,10 @@ SEXO = (
     ('F', 'Femenino'),
 )
 
+ESTADO_CORREO = (
+    ('E', 'Enviado'),
+    ('R', 'Rebotado'),
+)
 
 class CustomUserManager(UserManager):
     pass
@@ -66,7 +70,7 @@ class LogCorreo(models.Model):
     """
     emisor = models.EmailField(max_length=254)
     receptor = models.CharField(max_length=100)
-    estado = models.IntegerField()
+    estado = models.CharField(max_length=1, choices=ESTADO_CORREO, blank=True)
     asunto = models.CharField(max_length=250)
     fecha = models.DateTimeField(default=datetime.now)
 
