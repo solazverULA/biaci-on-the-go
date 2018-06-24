@@ -7,7 +7,7 @@ from .forms import CustomUserCreationForm
 from .models import CompleteUser, CustomUser , RegistedUserId
 from consulta.models import Consulta
 from django.template.response import TemplateResponse
-from django.views.generic import CreateView
+from django.views.generic import View, CreateView
 
 class SignUp(CreateView):
     form_class = CustomUserCreationForm
@@ -18,7 +18,7 @@ class SignUp(CreateView):
         if (RegistedUserId.objects.filter(cedula=form.instance.cedula).exists()):
             return super(SignUp, self).form_valid(form)
         else:
-            return super(SignUp, self).form_invalid(form)
+            return redirect('error_signup')
 
 
 
@@ -39,6 +39,13 @@ def PerfilView(request):
 		return render(request,'perfil.html',{'userdata':userdata},)
 	else:
 		return redirect('login')
+
+class ErrorSignUp(View):
+
+    """
+    """
+    def get(self, request):
+        return TemplateResponse( request ,'error_signup.html')
 
 
 
