@@ -84,6 +84,13 @@
                         </ul>
                     </nav>
 
+                  <!-- Sugerencias -->
+                    {% if user.is_authenticated %}
+                        <div>
+                            {% include 'sugerencias.html' %}
+                        </div>
+                      {% endif %}
+
                 <!-- Section -->
                     <section>
                         <header class="major">
