@@ -24,8 +24,8 @@ class CustomUser(AbstractUser):
 
 class CompleteUser(CustomUser):
 	cedula = models.CharField(
-        max_length=11, 
-        unique= True,
+        max_length=11,
+        primary_key=True,
         validators=[RegexValidator(regex="^[V|E]{1}[0]{1}[0-9]{7,9}$",message="Formato de Cedula invalido , ej: V0123456")],
         help_text='Fortamto: V012345678',
     )
@@ -39,11 +39,16 @@ class CompleteUser(CustomUser):
         validators=[RegexValidator(regex="^[0]{1}[2-4]{1}[1-9]{1}[1-9]{1}$",message="Codigo de Area invalido , ej: 0274")],
     )
 	num_telefono = models.CharField(max_length=7)
-	direccion = models.CharField(max_length=150)
-	carrera = models.CharField(max_length=100, blank=True)
+	direccion = models.CharField(max_length=150)    
     
-    
-# Create your models here.
-'''validators=[RegexValidator
-                                      (regex="^[0-9]{10}$",
-message="Invalid format for CI")]'''
+
+class RegistedUserId(models.Model):
+	"""docstring for RegistedUser"""
+	cedula = models.CharField(
+		primary_key=True,
+        max_length=11, 
+        unique= True,
+        validators=[RegexValidator(regex="^[V|E]{1}[0]{1}[0-9]{7,9}$",message="Formato de Cedula invalido , ej: V0123456")],
+        help_text='Fortamto: V012345678',
+    )
+		

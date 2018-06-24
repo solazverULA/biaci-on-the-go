@@ -2,16 +2,25 @@
 from django.shortcuts import render , redirect
 from django.views.generic import TemplateView
 from django.urls import reverse_lazy
-from django.views import generic
+
 from .forms import CustomUserCreationForm
-from .models import CompleteUser, CustomUser
+from .models import CompleteUser, CustomUser , RegistedUserId
 from consulta.models import Consulta
 from django.template.response import TemplateResponse
+from django.views.generic import CreateView
 
-class SignUp(generic.CreateView):
+class SignUp(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'signup.html'
+
+    def form_valid(self, form):
+        if (RegistedUserId.objects.filter(cedula=form.instance.cedula).exists()):
+            return super(SignUp, self).form_valid(form)
+        else:
+            return super(SignUp, self).form_invalid(form)
+
+
 
 
 def HomePageView(request):
@@ -30,4 +39,7 @@ def PerfilView(request):
 		return render(request,'perfil.html',{'userdata':userdata},)
 	else:
 		return redirect('login')
+
+
+
 # Create your views here.
