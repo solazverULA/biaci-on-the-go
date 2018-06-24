@@ -7,10 +7,7 @@ from django.urls import reverse  # Usado para generar URL
 from django.core.validators import RegexValidator
 
 ESTADO_EJEMPLAR = (
-    ('P', 'Prestado'),
-    ('D', 'Disponible'),
     ('B', 'Bloqueado'),  # ejemplares de consulta interna
-    ('R', 'Reservado'),
 )
 
 
@@ -78,7 +75,7 @@ class EjemplarRevista(models.Model):
         validators=[RegexValidator(regex="^[e]{1}[0-9]{1,3}$", message="Formato de ejemplar incorrecto, ej: e1")],
     )
     revista = models.ForeignKey('Revista', on_delete=models.SET_NULL, null=True)
-    estado = models.CharField(max_length=1, choices=ESTADO_EJEMPLAR, blank=True, default='D')
+    estado = models.CharField(max_length=1, choices=ESTADO_EJEMPLAR, blank=True, default='B')
 
     def __str__(self):
         """
