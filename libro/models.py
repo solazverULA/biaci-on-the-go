@@ -148,7 +148,6 @@ class Libro(models.Model):
         return reverse('ejemplar', args=[str(self.cota)])
 
 
-
 class Ejemplar(models.Model):
     """
     Modelo que representa un ejemplar de un libro

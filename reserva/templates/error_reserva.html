@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+
+    <section>
+        <header class="main">
+            <h1>{% block heading %}Error de reserva<br>{% endblock %}</h1>
+        </header>
+          <div class="row 180% uniform">
+
+                <center>
+                  <div class="box">
+                        <h3>Error: usted ha realizado una reserva recientemente de este mismo ejemplar debe esperar dos
+                            dia para realizar alguna otra actividad con este mismo ejemplar.
+                        </h3>
+                  </div>
+                </center>
+
+            </div>
+    </section>
+    <!--Siempre van dos div que cierran-->
+    </div>
+</div>
+{% endblock %}

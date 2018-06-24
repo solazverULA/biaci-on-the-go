@@ -120,7 +120,7 @@ class EjemplaresVista(View):
             raise Http404("El libro no existe")
 
         # Verifico que no haya ningun ejemplar reservado y lo envio en la vista
-        reserva = Reserva.objects.filter(id_ejemplar__libro__cota=pk)
+        reserva = Reserva.objects.filter(id_ejemplar__libro__cota=pk, estado='A')
         reservado = reserva.exists()
 
 

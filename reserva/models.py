@@ -2,9 +2,7 @@ from django.db import models
 
 from datetime import datetime, timedelta
 
-from libro.models import Ejemplar
-
-from revista.models import EjemplarRevista
+from libro.models import Ejemplar, Libro
 
 from users.models import CustomUser
 
@@ -17,20 +15,14 @@ ESTADO_RESERVA = (
     ('E', 'Eliminado'),
 )
 
+
 class Reserva(models.Model):
 
     fecha_reserva = models.DateTimeField(default=datetime.now)
     fecha_caducidad = models.DateTimeField(default=datetime.now()+timedelta(hours=10))
     id_ejemplar = models.ForeignKey(Ejemplar, on_delete=models.CASCADE, null=True)
-    id_ejemplar_revista = models.ForeignKey(EjemplarRevista, on_delete=models.CASCADE, null=True)
     id_usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True)
     estado = models.CharField(max_length=1, choices=ESTADO_RESERVA, blank=True, default='A')
-
-    def __str__(self):
-        """
-        Cadena para representar el objeto
-        """
-        return self.id
 
     def get_absolute_url(self):
         """
@@ -42,7 +34,6 @@ class Reserva(models.Model):
 class HistorialReserva(models.Model):
 
     id_reserva = models.ForeignKey(Reserva, on_delete=models.CASCADE, null=True)
-    id_usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True)
     accion = models.CharField(max_length=1, choices=ESTADO_RESERVA, blank=True, default='A')
     fecha = models.DateTimeField(default=datetime.now)
 
@@ -51,12 +42,6 @@ class HistorialReserva(models.Model):
         Clase para ordenar al momento de consultar
         """
         ordering = ["id", "fecha"]
-
-    def __str__(self):
-        """
-        Cadena para representar el objeto
-        """
-        return self.id
 
     def get_absolute_url(self):
         """

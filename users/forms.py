@@ -24,6 +24,7 @@ class CustomUserCreationForm(UserCreationForm):
 			last_name='Apellidos', email='Correo',sexo='Género',
 			cedula='Cedula de Identidad',cod_area='Codigo de area',num_telefono='Numero de telefono',direccion='Direccion')
 
+		
 
 class CustomUserChangeForm(UserChangeForm):
 	class Meta:
