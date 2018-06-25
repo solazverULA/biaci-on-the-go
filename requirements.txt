@@ -1,14 +1,19 @@
 alabaster==0.7.10
+amqp==2.3.2
 Babel==2.6.0
+billiard==3.5.0.3
+celery==4.2.0
 certifi==2018.4.16
 chardet==3.0.4
 dj-database-url==0.5.0
 Django==2.0.5
+django-celery-monitor==1.1.2
 docutils==0.14
 gunicorn==19.8.1
 idna==2.7
 imagesize==1.0.0
 Jinja2==2.10
+kombu==4.2.1
 MarkupSafe==1.0
 packaging==17.1
 Pillow==5.1.0
@@ -16,6 +21,7 @@ psycopg2==2.7.4
 Pygments==2.2.0
 pyparsing==2.2.0
 pytz==2018.4
+redis==2.10.6
 requests==2.19.1
 selenium==3.12.0
 six==1.11.0
@@ -23,4 +29,5 @@ snowballstemmer==1.2.1
 Sphinx==1.7.5
 sphinxcontrib-websupport==1.1.0
 urllib3==1.23
+vine==1.1.4
 whitenoise==3.3.1
