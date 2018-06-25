@@ -24,11 +24,19 @@ class SignUp(CreateView):
 
 
 def HomePageView(request):
+        usuario = Consulta.objects.filter(username=request.user)[:5]
+        # Falta arreglar la consulta de la sugerencia
+        #querys = []
+        #for i in usuario:
+        #    query = Consulta.objects.filter(tema=i.tema).exclude(username=request.user,titulo=i.titulo).first()
+        #    querys.append(query)
+
         context = {'consulta' : Consulta.objects.raw('''SELECT 1 as id, titulo, cota, tipo_material, COUNT(titulo) as total
                                                         FROM consulta_consulta
                                                         GROUP BY titulo, cota, tipo_material
                                                         ORDER BY total
-                                                        DESC LIMIT 10'''),}
+                                                        DESC LIMIT 10'''),
+                    'querys': usuario,}
         return TemplateResponse(request, 'home.html', context)
 
 
@@ -46,13 +54,3 @@ class ErrorSignUp(View):
     """
     def get(self, request):
         return TemplateResponse( request ,'error_signup.html')
-
-
-
-# Create your views here.
-
-def Sugerencias(request):
-        context = {'consulta' : Consulta.objects.raw('''SELECT *
-                                                        FROM consulta_consulta                                                   
-                                                        DESC LIMIT 3'''),}
-        return TemplateResponse(request, 'Sugerencias.html', context)
