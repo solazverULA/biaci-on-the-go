@@ -32,7 +32,17 @@
                               {% endif %}
                                 <td>{{consultas.tipo_material}}</td>
                                 <td>{{consultas.fecha}}</td>
-                                <td><a href="#" class="icon fa-search"></a></td>
+                                <td>
+                                  {% if consultas.tipo_material == 'Libro'%}
+                                    <a href="{% url 'ejemplar' consultas.cota %}" class="icon fa-search" ></a>
+                                  {% endif %}
+                                  {% if consultas.tipo_material == 'Revista'%}
+                                    <a href="{% url 'ejemplar_revista' consultas.cota %}" class="icon fa-search" ></a>
+                                  {% endif %}
+                                  {% if consultas.tipo_material == 'Tesis'%}
+                                    <a href="{% url 'ejemplar_tesis' consultas.cota %}" class="icon fa-search" ></a>
+                                    {% endif %}
+                                </td>
                               </tr>
                         {% endfor %}
                     </tbody>

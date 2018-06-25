@@ -19,6 +19,30 @@
                 <img src="{% static '/images/1.jpg' %}" alt="" />
             </span>
         </section>
+        {% if user.is_authenticated %}
+        <section>
+          <div class="row 180% uniform">
+                {% for i in querys %}
+                <center>
+                  <div class="box">
+                        <h2>{{i.titulo}}</h2>
+                        <h4>{{ i.cota }}</h4>
+                        <h4>{{ i.tipo_material }}</h4>
+                        {% if i.tipo_material == 'Libro'%}
+                            <a href="{{ i.get_absolute_url }}" class="button special icon fa-search" >Ver</a>
+                        {% endif %}
+                        {% if i.tipo_material == 'Revista'%}
+                          <a href="{% url 'ejemplar_revista' i.cota %}" class="button special icon fa-search" >Ver</a>
+                        {% endif %}
+                        {% if i.tipo_material == 'Tesis'%}
+                          <a href="{% url 'ejemplar_tesis' i.cota %}" class="button special icon fa-search" >Ver</a>
+                        {% endif %}
+                  </div>
+                </center>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
         <section>
           <div class="row 180% uniform">
                 {% for consultas in consulta %}

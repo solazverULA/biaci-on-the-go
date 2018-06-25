@@ -73,10 +73,10 @@ class EjemplaresVista(View):
         # Verifico que no haya ningun ejemplar reservado y lo envio en la vista
         #reserva = Reserva.objects.filter(id_ejemplar__revista__cota=pk)
         #reservado = reserva.exists()
-
+        print(revista.area)
         # Verifico si el titulo no esta en las consultas para agregarlo si no esta
         if Consulta.objects.filter(username=request.user, titulo=revista.titulo).exists() == False:
-            busqueda = Consulta(username=request.user,cota=revista.cota,titulo=revista.titulo,autor_nombre=" ",autor_apellido=" ",tipo_material="Revista")
+            busqueda = Consulta(username=request.user,cota=revista.cota,titulo=revista.titulo,autor_nombre=" ",autor_apellido=" ",tipo_material="Revista",tema=revista.area)
             busqueda.save()
 
         return render(request,'ejemplar_revista.html',context={'ejemplar': revista,})
