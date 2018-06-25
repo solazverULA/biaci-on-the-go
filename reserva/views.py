@@ -14,6 +14,8 @@ from .forms import ReservaForm
 
 from django.core.mail import send_mail # Para enviar correo de que reservaste un libro
 
+from prestamo.task import enviar_notificacion
+
 
 class ReservaLibros(View):
 
@@ -38,6 +40,7 @@ class ReservaLibros(View):
                 'query': Reserva.objects.filter(id_usuario=request.user, estado='A').exists(),
             }
             return TemplateResponse(request, 'lista_reserva.html', context)
+            enviar_notificacion.delay()
         else:
             return redirect('login')
 

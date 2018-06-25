@@ -46,3 +46,17 @@
 ## Para generar documentacion
     ~$ make html
     ~$ make latexpdf (teniendo instalado latex y latexmk)
+
+## Para ejecutar el monitor de celery (ambas en paralelo y previa instalacion de Redis)
+    https://enzoruiz.github.io/blog/posts/celery-tareas-programadas.html
+    http://buhoprogramador.com/entrada/14/celery-django
+    https://www.codingforentrepreneurs.com/blog/celery-redis-django/
+    Rollo no carga task beat: revisar status de servidor redis-server
+    ~$ celery -A biaci_go events -l info --camera django_celery_monitor.camera.Camera --frequency=2.0
+    ~$ celery -A biaci_go worker -l info -E
+    ~$ celery -A biaci_go beat -l info
+
+## Para ejecutar una prueba unitaria especifica
+    Tener en el ambiente geckodriver y geckodriver.log
+    ~$ python manage.py test app.carpeta_test.archivo_test
+

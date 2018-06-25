@@ -543,3 +543,18 @@ JavaScript error: resource://gre/modules/Sqlite.jsm, line 826: Error: Connection
 JavaScript error: resource://gre/modules/Sqlite.jsm, line 826: Error: Connection is not open.
 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
 1528646072611	geckodriver::marionette	ERROR	Failed to stop browser process
+1529941664673	geckodriver	INFO	geckodriver 0.20.0
+1529941664737	geckodriver	INFO	Listening on 127.0.0.1:44111
+1529941665731	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.Wv7nFGKhxQOV"
+1529941686726	Marionette	INFO	Listening on port 34475
+1529941686852	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 826: Error: Connection is not open.
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 826: Error: Connection is not open.
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 826: Error: Connection is not open.
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 826: Error: Connection is not open.
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 826: Error: Connection is not open.
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 826: Error: Connection is not open.
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 826: Error: Connection is not open.
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 826: Error: Connection is not open.
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1529941704074	geckodriver::marionette	ERROR	Failed to stop browser process
