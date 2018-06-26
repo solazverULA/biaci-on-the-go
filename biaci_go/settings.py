@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'mf@#&%u#70ya%s@emh=68(z9690a@3)y5ejw06ie+w-tq_t)g('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -185,13 +185,13 @@ CELERY_BEAT_SCHEDULE = {
 
     'vencer_reservas': {
         'task': 'reserva.task.vencer_reservas',
-        'schedule': crontab(minute='*/1'),
-        #'schedule': crontab(hour='*/10', minute='45', day_of_week='mon,tue,wed,thu,fri,sat'),
+        #'schedule': crontab(minute='*/1'),
+        'schedule': crontab(hour='*/10', minute='45', day_of_week='mon,tue,wed,thu,fri,sat'),
     },
 
     'enviar_notificacion': {
         'task': 'prestamo.task.enviar_notificacion',
-        'schedule': crontab(minute='*/1'),
-        #'schedule': crontab(hour='*/24', day_of_week='mon,tue,wed,thu,fri,sat,sun'),
+        #'schedule': crontab(minute='*/1'),
+        'schedule': crontab(hour='*/24', day_of_week='mon,tue,wed,thu,fri,sat,sun'),
     },
 }
