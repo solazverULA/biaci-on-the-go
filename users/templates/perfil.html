@@ -23,7 +23,27 @@
             <a href="{% url 'lista' %}" class = "button">Ver Reservas</a>
             <a href="{% url 'lista_prestamos' %}" class = "button">Ver Prestamos</a>
             <a href="{% url 'logout' %}" class = "button special">Log Out</a>
-          </div>                 
+          </div>
+            <br>
+            {% if prestamo != 0%}
+                {% for i in prestamo %}
+                <section>
+                <div class="row 180% uniform">
+                <center>
+                  <div class="box">
+                        <h2>Notificaci&oacute;n</h2>
+                        <h4>Recuerda que debes entregar <br>
+                            el libro {{i.id_ejemplar.libro.cota}}<br>
+                            {{i.id_ejemplar.libro.titulo}}<br>
+                            antes del {{i.fecha_entrega}}.
+                        </h4>
+                  </div>
+                </center>
+                </div>
+                </section>
+                {% endfor %}
+            {% endif %}
+
     </div> 
 
     {% else %}
