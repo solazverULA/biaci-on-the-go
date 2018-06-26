@@ -1,0 +1,125 @@
+1528584630654	geckodriver	INFO	geckodriver 0.20.0
+1528584630685	geckodriver	INFO	Listening on 127.0.0.1:47693
+1528584631925	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.7OPm96gBw0SY"
+1528584640636	Marionette	INFO	Listening on port 35101
+1528584640717	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://sjrtp3-cdn.marketo.com/rtp-api/v1/rtp.js?aid=ubuntu1, line 4: ReferenceError: jQuery is not defined
+1528584940854	geckodriver	INFO	geckodriver 0.20.0
+1528584940872	geckodriver	INFO	Listening on 127.0.0.1:57763
+1528584942292	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.sg8OUuWBljFC"
+1528584950780	Marionette	INFO	Listening on port 36799
+1528584950902	Marionette	WARN	TLS certificate errors will be ignored for this session
+1528585166157	geckodriver	INFO	geckodriver 0.20.0
+1528585166173	geckodriver	INFO	Listening on 127.0.0.1:41495
+1528585167923	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.o06eheybnGHF"
+1528585178340	Marionette	INFO	Listening on port 42847
+1528585178411	Marionette	WARN	TLS certificate errors will be ignored for this session
+1528585330731	geckodriver	INFO	geckodriver 0.20.0
+1528585330743	geckodriver	INFO	Listening on 127.0.0.1:56827
+1528585332416	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.UM14ux1UgDOg"
+1528585341040	Marionette	INFO	Listening on port 37173
+1528585341121	Marionette	WARN	TLS certificate errors will be ignored for this session
+1528585622508	geckodriver	INFO	geckodriver 0.20.0
+1528585622531	geckodriver	INFO	Listening on 127.0.0.1:32951
+1528585623798	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.ZLpVM5Jr0Qqr"
+1528585636724	Marionette	INFO	Listening on port 41147
+1528585636842	Marionette	WARN	TLS certificate errors will be ignored for this session
+1528586915976	geckodriver	INFO	geckodriver 0.20.0
+1528586916041	geckodriver	INFO	Listening on 127.0.0.1:37887
+1528586919140	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.12EKrkVv1rLR"
+1528586935284	Marionette	INFO	Listening on port 46843
+1528586935383	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1528605827934	geckodriver	INFO	geckodriver 0.20.0
+1528605827988	geckodriver	INFO	Listening on 127.0.0.1:51763
+1528605830144	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.uE6cVXVYwMug"
+1528605839406	Marionette	INFO	Listening on port 40681
+1528605839515	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1528605928238	geckodriver	INFO	geckodriver 0.20.0
+1528605928256	geckodriver	INFO	Listening on 127.0.0.1:32775
+1528605929825	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.yhyVKxOBKc6u"
+1528605938119	Marionette	INFO	Listening on port 45211
+1528605938281	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1528605972146	geckodriver	INFO	geckodriver 0.20.0
+1528605972175	geckodriver	INFO	Listening on 127.0.0.1:37077
+1528605974147	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.JvvpxEnoLYZr"
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1528606001740	Marionette	INFO	Listening on port 36673
+1528606001888	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1528606290819	geckodriver	INFO	geckodriver 0.20.0
+1528606290859	geckodriver	INFO	Listening on 127.0.0.1:42655
+1528606292918	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.mPOSXj9QifHc"
+1528606302996	Marionette	INFO	Listening on port 45879
+1528606303104	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1528606391096	geckodriver	INFO	geckodriver 0.20.0
+1528606391112	geckodriver	INFO	Listening on 127.0.0.1:38065
+1528606391574	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.JPIpTqsbhWpJ"
+1528606395929	Marionette	INFO	Listening on port 38559
+1528606396014	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1528606654362	geckodriver	INFO	geckodriver 0.20.0
+1528606654377	geckodriver	INFO	Listening on 127.0.0.1:35389
+1528606656021	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.aHNBcBX6OA36"
+1528606661451	Marionette	INFO	Listening on port 35233
+1528606661579	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1528606712928	geckodriver	INFO	geckodriver 0.20.0
+1528606712939	geckodriver	INFO	Listening on 127.0.0.1:46493
+1528606715174	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.r2jxn3vajydM"
+1528606728551	Marionette	INFO	Listening on port 37821
+1528606728658	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1528607017890	geckodriver	INFO	geckodriver 0.20.0
+1528607017918	geckodriver	INFO	Listening on 127.0.0.1:34573
+1528607020091	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.HekOEXsnDApe"
+1528607029943	Marionette	INFO	Listening on port 46019
+1528607029992	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1528607160419	geckodriver	INFO	geckodriver 0.20.0
+1528607160431	geckodriver	INFO	Listening on 127.0.0.1:33567
+1528607160657	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.R8dJ5kUr8x4j"
+1528607165233	Marionette	INFO	Listening on port 38927
+1528607165332	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1528607215591	geckodriver	INFO	geckodriver 0.20.0
+1528607215607	geckodriver	INFO	Listening on 127.0.0.1:50667
+1528607216447	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.jdaay7awygro"
+1528607221402	Marionette	INFO	Listening on port 33671
+1528607221427	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1528607261018	geckodriver	INFO	geckodriver 0.20.0
+1528607261035	geckodriver	INFO	Listening on 127.0.0.1:47975
+1528607261221	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.kiCVf6GUoZEv"
+1528607267389	Marionette	INFO	Listening on port 46691
+1528607267499	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1528607300763	geckodriver	INFO	geckodriver 0.20.0
+1528607300821	geckodriver	INFO	Listening on 127.0.0.1:41965
+1528607302057	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.QqEmCRWl3CTA"
+1528607310524	Marionette	INFO	Listening on port 35803
+1528607310619	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1528607745758	geckodriver	INFO	geckodriver 0.20.0
+1528607745774	geckodriver	INFO	Listening on 127.0.0.1:44095
+1528607746085	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.6rhkvvOrqRaY"
+1528607750743	Marionette	INFO	Listening on port 43931
+1528607750845	Marionette	WARN	TLS certificate errors will be ignored for this session
+1528607798998	geckodriver	INFO	geckodriver 0.20.0
+1528607799009	geckodriver	INFO	Listening on 127.0.0.1:34667
+1528607800109	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.kjAjLwnP80Wt"
+1528607804970	Marionette	INFO	Listening on port 36175
+1528607805067	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping

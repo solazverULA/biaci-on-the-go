@@ -22,7 +22,7 @@ class Biblioteca(models.Model):
     codigo = models.CharField(max_length=10, primary_key=True)
     nombre = models.CharField(max_length=100)
     estado = models.CharField(max_length=80)
-    cuidad = models.CharField(max_length=80)
+    ciudad = models.CharField(max_length=80)
     avenida = models.CharField(max_length=80)
     calle = models.CharField(max_length=80)
     edificio = models.CharField(max_length=80)
@@ -49,7 +49,7 @@ class Materia(models.Model):
 
 class Idioma(models.Model):
     """
-    Modelo que representa u lenguaje
+    Modelo que representa un lenguaje
 
     :Example:
         ej. español, ingles, etc.

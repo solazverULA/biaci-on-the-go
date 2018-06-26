@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from libro.models import Autor
+from libro.models import Autor, Biblioteca, Libro, Idioma, Materia
 
 
 class AutorModeloTest(TestCase):
@@ -36,7 +36,90 @@ class AutorModeloTest(TestCase):
         expected_object_name = '%s, %s' % (autor.apellido, autor.nombre)
         self.assertEquals(expected_object_name, str(autor))
 
-    def test_get_absolute_url(self):
-        autor=Autor.objects.get(id=1)
-        # Prueba la ruta absoluta, tambien fall si no la cree
-        self.assertEquals(autor.get_absolute_url(),'/libro/autor/1')
+    
+
+class BibliotecaModeloTest(TestCase):
+    
+    @classmethod
+    def setUpTestData(cls):
+        Biblioteca.objects.create(codigo = "euct", nombre = "Biblioteca Integrada de Arquitectura Ciencias e Ingenieria",
+                                    estado = "Estado Bolivariano de Merida", ciudad = "Casigua del Cubo",
+                                    avenida = "La Hechicera", calle =  "S/N",
+                                    edificio = "C" )
+    def test_codigo(self):
+        biblioteca=Biblioteca.objects.get(codigo="euct")
+        field_label = biblioteca._meta.get_field('codigo').verbose_name
+        self.assertEquals(field_label, 'codigo')
+
+    def test_codigo_max_caracteres(self):
+        biblioteca=Biblioteca.objects.get(codigo="euct")
+        max_length = biblioteca._meta.get_field('codigo').max_length
+        self.assertEquals(max_length, 10)
+
+    def test_nombre(self):
+        biblioteca=Biblioteca.objects.get(codigo="euct")
+        field_label = biblioteca._meta.get_field('nombre').verbose_name
+        self.assertEquals(field_label, 'nombre')
+
+    def test_nombre_max_caracteres(self):
+        biblioteca=Biblioteca.objects.get(codigo="euct")
+        max_length = biblioteca._meta.get_field('nombre').max_length
+        self.assertEquals(max_length, 100)
+
+    def test_estado(self):
+        biblioteca=Biblioteca.objects.get(codigo="euct")
+        field_label = biblioteca._meta.get_field('estado').verbose_name
+        self.assertEquals(field_label, 'estado')
+
+    def test_estado_max_caracteres(self):
+        biblioteca=Biblioteca.objects.get(codigo="euct")
+        max_length = biblioteca._meta.get_field('estado').max_length
+        self.assertEquals(max_length, 80)
+
+    def test_ciudad(self):
+        biblioteca=Biblioteca.objects.get(codigo="euct")
+        field_label = biblioteca._meta.get_field('ciudad').verbose_name
+        self.assertEquals(field_label, 'ciudad')
+
+    def test_ciudad_max_caracteres(self):
+        biblioteca=Biblioteca.objects.get(codigo="euct")
+        max_length = biblioteca._meta.get_field('ciudad').max_length
+        self.assertEquals(max_length, 80)
+
+    def test_avenida(self):
+        biblioteca=Biblioteca.objects.get(codigo="euct")
+        field_label = biblioteca._meta.get_field('avenida').verbose_name
+        self.assertEquals(field_label, 'avenida')
+
+    def test_avenida_max_caracteres(self):
+        biblioteca=Biblioteca.objects.get(codigo="euct")
+        max_length = biblioteca._meta.get_field('avenida').max_length
+        self.assertEquals(max_length, 80)
+
+    def test_calle(self):
+        biblioteca=Biblioteca.objects.get(codigo="euct")
+        field_label = biblioteca._meta.get_field('calle').verbose_name
+        self.assertEquals(field_label, 'calle')
+
+    def test_calle_max_caracteres(self):
+        biblioteca=Biblioteca.objects.get(codigo="euct")
+        max_length = biblioteca._meta.get_field('calle').max_length
+        self.assertEquals(max_length, 80)
+
+    def test_edificio(self):
+        biblioteca=Biblioteca.objects.get(codigo="euct")
+        field_label = biblioteca._meta.get_field('edificio').verbose_name
+        self.assertEquals(field_label, 'edificio')
+
+    def test_edificio_max_caracteres(self):
+        biblioteca=Biblioteca.objects.get(codigo="euct")
+        max_length = biblioteca._meta.get_field('edificio').max_length
+        self.assertEquals(max_length, 80)
+
+    def test_objecto_str_nombre(self):
+        # mostrar el nombre de la biblioteca
+        biblioteca=Biblioteca.objects.get(codigo="euct")
+        nombre_esperado = '%s' % (biblioteca.nombre)
+        self.assertEquals(nombre_esperado, str(biblioteca))
+
+
