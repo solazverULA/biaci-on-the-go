@@ -24,19 +24,26 @@ class SignUp(CreateView):
 
 
 def HomePageView(request):
-        usuario = Consulta.objects.filter(username=request.user)[:5]
-        # Falta arreglar la consulta de la sugerencia
-        #querys = []
-        #for i in usuario:
-        #    query = Consulta.objects.filter(tema=i.tema).exclude(username=request.user,titulo=i.titulo).first()
-        #    querys.append(query)
+        tema = Consulta.objects.filter(username=request.user)[:5]
+        if tema.exists() == True:
+            for temas in tema.all():
+                tema_consultado = temas.tema
+                tema_repite = Consulta.objects.filter(tema=tema_consultado).annotate(num=Count(temas.id)).aggregate(max=Max('num'))
+                context = {'querys' : tema_repite,
+                            'consulta' : Consulta.objects.raw('''SELECT 1 as id, titulo, cota, tipo_material, COUNT(titulo) as total
+                                                                            FROM consulta_consulta
+                                                                            GROUP BY titulo, cota, tipo_material
+                                                                            ORDER BY total
+                                                                            DESC LIMIT 10'''),
+                }
+                return TemplateResponse(request, 'home.html', context)
 
         context = {'consulta' : Consulta.objects.raw('''SELECT 1 as id, titulo, cota, tipo_material, COUNT(titulo) as total
                                                         FROM consulta_consulta
                                                         GROUP BY titulo, cota, tipo_material
                                                         ORDER BY total
                                                         DESC LIMIT 10'''),
-                    'querys': usuario,}
+                                                        }
         return TemplateResponse(request, 'home.html', context)
 
 
