@@ -13,7 +13,7 @@
                     {% for prestamos in prestamo %}
                     <center>
                       <div class="box">
-                            <h3>TITULO LIBRO</h3>
+                            <h3>{{prestamos.id_ejemplar.libro.titulo}}</h3>
                             <h4>Cota: {{prestamos.id_ejemplar}}</h4>
                             <h4>Fecha Prestamo: {{prestamos.fecha_prestamo}}</h4>
                             <h4>Fecha Entrega: {{prestamos.fecha_entrega}}</h4>

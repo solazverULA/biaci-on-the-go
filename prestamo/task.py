@@ -15,7 +15,7 @@ from django.core.mail import send_mail # Para enviar correo de que reservaste un
 
 app = Celery('biaci_go')
 
-@task(name='enviar_notificacion')
+@task()
 def enviar_notificacion():
     """
     Esta funcion realiza en funcion de los prestamos del usuario el envio de la notificacion
@@ -24,7 +24,7 @@ def enviar_notificacion():
     """
     # Consulto prestamos que no se han vencido
     hoy = datetime.now(timezone.utc)
-    prestamos = Prestamo.objects.filter(fecha_entrega__lte=hoy)
+    prestamos = Prestamo.objects.filter(fecha_entrega__gte=hoy)
     if prestamos.exists() == True:
         for prestamo in prestamos.all():
             # Obtengo fechas de 3 dias antes para enviar la notificacion
