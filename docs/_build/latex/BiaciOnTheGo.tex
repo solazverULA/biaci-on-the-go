@@ -58,7 +58,7 @@
 
 
 \title{Biaci On The Go Documentation}
-\date{15 de junio de 2018}
+\date{25 de junio de 2018}
 \release{0.1}
 \author{Miguel Méndez, Yenifer Ramírez y Manuel Zambrano}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -91,10 +91,59 @@
 \label{\detokenize{index:contents}}
 
 \section{Views Aplicacion de Reserva}
-\label{\detokenize{modules/reserva/views:module-reserva.views}}\label{\detokenize{modules/reserva/views:views-aplicacion-de-reserva}}\label{\detokenize{modules/reserva/views::doc}}\index{reserva.views (módulo)}\index{ReservaLibros (clase en reserva.views)}
+\label{\detokenize{modules/reserva/views:module-reserva.views}}\label{\detokenize{modules/reserva/views:views-aplicacion-de-reserva}}\label{\detokenize{modules/reserva/views::doc}}\index{reserva.views (módulo)}\index{ErrorReserva (clase en reserva.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/reserva/views:reserva.views.ErrorReserva}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{reserva.views.}}\sphinxbfcode{\sphinxupquote{ErrorReserva}}}{\emph{**kwargs}}{}
+Esta clase muestra un error si la reserva no se pudo realizar
+
+\end{fulllineitems}
+
+\index{ReservaLibros (clase en reserva.views)}
 
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{modules/reserva/views:reserva.views.ReservaLibros}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{reserva.views.}}\sphinxbfcode{\sphinxupquote{ReservaLibros}}}{\emph{**kwargs}}{}
+Esta clase verifica las reservas realizadas por el usuario
+\index{get() (método de reserva.views.ReservaLibros)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/reserva/views:reserva.views.ReservaLibros.get}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{get}}}{\emph{request}, \emph{*args}, \emph{**kwargs}}{}
+Funcion para recopilar la informacion de los ejemplares ejemplares reservado por el usuario logueado
+
+A partir de los datos de la consulta, se listan los datos de la reserva
+\begin{quote}\begin{description}
+\item[{Devuelve}] \leavevmode
+Una plantilla llamada \sphinxtitleref{lista\_reserva.html}
+
+\item[{Tipo del valor devuelto}] \leavevmode
+Template Response
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+\index{Reservar() (en el módulo reserva.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/reserva/views:reserva.views.Reservar}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{reserva.views.}}\sphinxbfcode{\sphinxupquote{Reservar}}}{\emph{request}, \emph{id\_ejemplar}}{}
+Funcion para reservar un ejemplar.
+
+0- Verifica que el mismo ejemplar no haya sido reservado en los ultimos dos dias por el mismo usuario
+1- Reserva el ejemplar.
+2. Guarda la reserva en un historial.
+3. Cambia el estado del ejemplar de disponible a reservado.
+\begin{quote}\begin{description}
+\item[{Devuelve}] \leavevmode
+un render a \sphinxtitleref{reservar.html}
+
+\item[{Tipo del valor devuelto}] \leavevmode
+render
+
+\end{description}\end{quote}
+
 \end{fulllineitems}
 
 

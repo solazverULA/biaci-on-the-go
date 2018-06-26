@@ -24,11 +24,26 @@ class SignUp(CreateView):
 
 
 def HomePageView(request):
+        tema = Consulta.objects.filter(username=request.user)[:5]
+        if tema.exists() == True:
+            for temas in tema.all():
+                tema_consultado = temas.tema
+                tema_repite = Consulta.objects.filter(tema=tema_consultado).annotate(num=Count(temas.id)).aggregate(max=Max('num'))
+                context = {'querys' : tema_repite,
+                            'consulta' : Consulta.objects.raw('''SELECT 1 as id, titulo, cota, tipo_material, COUNT(titulo) as total
+                                                                            FROM consulta_consulta
+                                                                            GROUP BY titulo, cota, tipo_material
+                                                                            ORDER BY total
+                                                                            DESC LIMIT 10'''),
+                }
+                return TemplateResponse(request, 'home.html', context)
+
         context = {'consulta' : Consulta.objects.raw('''SELECT 1 as id, titulo, cota, tipo_material, COUNT(titulo) as total
                                                         FROM consulta_consulta
                                                         GROUP BY titulo, cota, tipo_material
                                                         ORDER BY total
-                                                        DESC LIMIT 10'''),}
+                                                        DESC LIMIT 10'''),
+                                                        }
         return TemplateResponse(request, 'home.html', context)
 
 
@@ -46,13 +61,3 @@ class ErrorSignUp(View):
     """
     def get(self, request):
         return TemplateResponse( request ,'error_signup.html')
-
-
-
-# Create your views here.
-
-def Sugerencias(request):
-        context = {'consulta' : Consulta.objects.raw('''SELECT *
-                                                        FROM consulta_consulta                                                   
-                                                        DESC LIMIT 3'''),}
-        return TemplateResponse(request, 'Sugerencias.html', context)

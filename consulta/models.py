@@ -17,6 +17,7 @@ class Consulta(models.Model):
     autor_apellido = models.CharField(max_length=20)
     tipo_material = models.CharField(max_length=20)
     fecha = models.DateTimeField(default=datetime.now)
+    tema = models.CharField(max_length=50)
 
     def __str__(self):
         """

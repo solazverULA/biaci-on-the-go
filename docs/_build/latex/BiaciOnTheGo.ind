@@ -1,8 +1,17 @@
 \begin{sphinxtheindex}
 \def\bigletter#1{{\Large\sffamily#1}\nopagebreak\vspace{1mm}}
 
+  \bigletter E
+  \item ErrorReserva (clase en reserva.views), \hyperpage{3}
+
+  \indexspace
+  \bigletter G
+  \item get() (m\IeC {\'e}todo de reserva.views.ReservaLibros), \hyperpage{3}
+
+  \indexspace
   \bigletter R
   \item reserva.views (m\IeC {\'o}dulo), \hyperpage{3}
   \item ReservaLibros (clase en reserva.views), \hyperpage{3}
+  \item Reservar() (en el m\IeC {\'o}dulo reserva.views), \hyperpage{3}
 
 \end{sphinxtheindex}

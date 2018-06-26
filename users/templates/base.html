@@ -19,7 +19,7 @@
                         <ul class="icons">
                             <li><a href="https://twitter.com/BBiaci" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
                             <li><a href="#" class="icon fa-linkedin"><span class="label">Snapchat</span></a></li>
-                            <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                            <li><a href="https://www.facebook.com/pages/Servicios-Bibliotecarios-de-la-Universidad-de-Los-Andes-SERBIULA/113482748694000" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
                             <li><a href="http://www.serbi.ula.ve/biaci/" class="icon fa-globe"><span class="label">Medium</span></a></li>
                         </ul>
                     </header>
@@ -42,7 +42,7 @@
                         </header>
                         <ul>
                             <li><a href="{% url 'home' %}">Inicio</a></li>
-                            <li><a href="quienes.html">¿Quienes Somos?</a></li>
+                            <li><a href="#">¿Quienes Somos?</a></li>
                             <li>
                                 <span class="opener">Bibliotecas</span>
                                 <ul>
@@ -84,23 +84,17 @@
                         </ul>
                     </nav>
 
-                  <!-- Sugerencias -->
-                    {% if user.is_authenticated %}
-                        <div>
-                            {% include 'sugerencias.html' %}
-                        </div>
-                      {% endif %}
-
-                <!-- Section -->
+              <!-- Section -->
                     <section>
                         <header class="major">
                             <h2>Contacto</h2>
                         </header>
                         <ul class="contact">
-                            <li class="fa-envelope-o"><a href="#">information@ula.ve</a></li>
-                            <li class="fa-phone">(0274) 000-0000</li>
-                            <li class="fa-home">1234 Alguna Calle #8254<br />
-                            M&eacute;rida, Codigo Postal 0000</li>
+                            <li class="fa-envelope-o"><a href="#">biaci@ula.ve,<br>bibliotecabiaci@gmail.com</a></li>
+                            <li class="fa-phone">+58 (0274) 2401221</li>
+                            <li class="fa-fax">+58 (0274) 2401236</li>
+                            <li class="fa-home">La Hechicera, Núcleo "Pedro Rincón Gutiérrez", edificio C "BIACI".<br/>
+                            M&eacute;rida, Codigo Postal 5115.</li>
                         </ul>
                     </section>
 

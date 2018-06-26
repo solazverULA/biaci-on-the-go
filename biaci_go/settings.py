@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
+from __future__ import absolute_import, unicode_literals
 
 import os
 
@@ -45,7 +46,8 @@ INSTALLED_APPS = [
     'reserva',
     'users',
     'prestamo',
-    'consulta'
+    'consulta',
+    'django_celery_monitor' # Monitor de tareas
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
@@ -160,3 +162,31 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER ='biacionthego@gmail.com'
 EMAIL_HOST_PASSWORD = '1234$Qwer'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# Añadimos la siguiente opción
+# url del broker al que se conectará celery.
+
+
+from celery.schedules import crontab
+
+
+CELERY_BROKER_URL='redis://localhost:6379/0'
+CELERY_TIMEZONE = 'America/Caracas'
+CELERY_ENABLE_UTC = True
+CELERY_BEAT_SCHEDULE = {
+
+    'tarea_prueba': {
+        'task': 'tarea_prueba',
+        'schedule': crontab(minute='*/1'),
+    },
+
+    'vencer_reservas': {
+        'task': 'vencer_reservas',
+        'schedule': crontab(hour='*/10', minute='45', day_of_week='mon,tue,wed,thu,fri,sat'),
+    },
+
+    'enviar_notificacion': {
+        'task': 'enviar_notificacion',
+        'schedule': crontab(hour='*/24', day_of_week='mon,tue,wed,thu,fri,sat,sun'),
+    },
+}

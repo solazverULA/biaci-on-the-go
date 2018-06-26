@@ -7,7 +7,7 @@
         <section id="banner">
             <div class="content">
                 <header>
-                    <h1>{% block heading %}BiblioApp una </br> herramienta{% endblock %}</h1>
+                    <center><h1>{% block heading %}<em>BIACI ON THE GO</em> una</br>herramienta{% endblock %}</h1></center>
                     <p>PARA LECTORES DE LA ULA</p>
                 </header>
                 <p>La Biblioteca Integrada de Arquitectura, Ciencias e Ingeniería "María E. Chaves de Burgos" pertenece a los Servicios Bibliotecarios de la Universidad de Los Andes (Serbiula), adscritos al Vicerrectorado Académico de la ULA. Proporcionar a los usuarios de Serbiula toda la información relacionada a los servicios y recursos existentes en la biblioteca.</p>
@@ -19,6 +19,30 @@
                 <img src="{% static '/images/1.jpg' %}" alt="" />
             </span>
         </section>
+        {% if user.is_authenticated %}
+        <section>
+          <div class="row 180% uniform">
+                {% for i in querys %}
+                <center>
+                  <div class="box">
+                        <h2>{{i.titulo}}</h2>
+                        <h4>{{ i.cota }}</h4>
+                        <h4>{{ i.tipo_material }}</h4>
+                        {% if i.tipo_material == 'Libro'%}
+                            <a href="{{ i.get_absolute_url }}" class="button special icon fa-search" >Ver</a>
+                        {% endif %}
+                        {% if i.tipo_material == 'Revista'%}
+                          <a href="{% url 'ejemplar_revista' i.cota %}" class="button special icon fa-search" >Ver</a>
+                        {% endif %}
+                        {% if i.tipo_material == 'Tesis'%}
+                          <a href="{% url 'ejemplar_tesis' i.cota %}" class="button special icon fa-search" >Ver</a>
+                        {% endif %}
+                  </div>
+                </center>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
         <section>
           <div class="row 180% uniform">
                 {% for consultas in consulta %}
@@ -44,14 +68,3 @@
     </div>
 </div>
 {% endblock %}
-
-<!-- templates/home.html <h1>Django Login Mega-Tutorial</h1>
-
-{% if user.is_authenticated %}
-
-	<p>Hi {{ user.username }}
-	<p><a href="{% url 'logout' %}">Log out</a></p>
-{% else %}
-	<p><a href="{% url 'signup' %}">Sign Up</a></p>
-	<p><a href="{% url 'login' %}">Log In </a></p>
-{% endif %}-->
