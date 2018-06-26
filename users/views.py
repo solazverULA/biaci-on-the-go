@@ -9,6 +9,11 @@ from consulta.models import Consulta
 from django.template.response import TemplateResponse
 from django.views.generic import View, CreateView
 
+from prestamo.models import Prestamo
+
+from datetime import datetime, timezone, timedelta # Para obtener el tiempo actual
+
+
 class SignUp(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
@@ -48,12 +53,31 @@ def HomePageView(request):
 
 
 def PerfilView(request):
-	if request.method == "GET" and request.user.is_authenticated and request.user.is_superuser == False:
-		usuario = CustomUser.objects.get(username=request.user)
-		userdata = CompleteUser.objects.get(customuser_ptr_id=usuario.id)
-		return render(request,'perfil.html',{'userdata':userdata},)
-	else:
-		return redirect('login')
+    """
+    Funcion que muestra el perfil del usuario, ademas consulta si tiene prestamos proximos a vencerse para notificarlo
+    :param request:
+    :return: Render
+    """
+    if request.method == "GET" and request.user.is_authenticated and request.user.is_superuser == False:
+        usuario = CustomUser.objects.get(username=request.user)
+        userdata = CompleteUser.objects.get(customuser_ptr_id=usuario.id)
+        # Consulto prestamos que no se han vencido
+        hoy = datetime.now(timezone.utc)
+        prestamos = Prestamo.objects.filter(fecha_entrega__gte=hoy, id_usuario=request.user)
+        if prestamos.exists() == True:
+            for prestamo in prestamos.all():
+                # Obtengo fechas de 3 dias antes para enviar la notificacion
+                dias = timedelta(days=3)
+                fecha_empieza = prestamo.fecha_entrega - dias
+                if str(hoy) >= str(fecha_empieza) and str(hoy) <= str(prestamo.fecha_entrega):
+                    return render(request, 'perfil.html', {'userdata': userdata, 'prestamo': prestamos}, )
+                else:
+                    return render(request, 'perfil.html', {'userdata': userdata, 'prestamo': 0}, )
+        else:
+            return render(request, 'perfil.html', {'userdata': userdata, 'prestamo': 0}, )
+    else:
+        return redirect('login')
+
 
 class ErrorSignUp(View):
 

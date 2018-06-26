@@ -95,7 +95,7 @@ DATABASES = {
         'NAME': 'biaci_bd',
         'USER': 'postgres',
         'HOST': 'localhost',
-        'PASSWORD': '257498'
+        'PASSWORD': '22538371'
     }
 }
 
@@ -167,26 +167,31 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # url del broker al que se conectará celery.
 
 
+# Other Django configurations...
+
+# Celery application definition
+# http://docs.celeryproject.org/en/v4.0.2/userguide/configuration.html
 from celery.schedules import crontab
 
 
-CELERY_BROKER_URL='redis://localhost:6379/0'
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'America/Caracas'
 CELERY_ENABLE_UTC = True
 CELERY_BEAT_SCHEDULE = {
 
-    'tarea_prueba': {
-        'task': 'tarea_prueba',
-        'schedule': crontab(minute='*/1'),
-    },
-
     'vencer_reservas': {
-        'task': 'vencer_reservas',
-        'schedule': crontab(hour='*/10', minute='45', day_of_week='mon,tue,wed,thu,fri,sat'),
+        'task': 'reserva.task.vencer_reservas',
+        'schedule': crontab(minute='*/1'),
+        #'schedule': crontab(hour='*/10', minute='45', day_of_week='mon,tue,wed,thu,fri,sat'),
     },
 
     'enviar_notificacion': {
-        'task': 'enviar_notificacion',
-        'schedule': crontab(hour='*/24', day_of_week='mon,tue,wed,thu,fri,sat,sun'),
+        'task': 'prestamo.task.enviar_notificacion',
+        'schedule': crontab(minute='*/1'),
+        #'schedule': crontab(hour='*/24', day_of_week='mon,tue,wed,thu,fri,sat,sun'),
     },
 }

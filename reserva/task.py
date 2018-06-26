@@ -15,20 +15,7 @@ from django.core.mail import send_mail # Para enviar correo de que reservaste un
 
 app = Celery('biaci_go')
 
-"""
-# El decorador shared_task sirve para crear tareas independientes a la app.
-# La tarea solo es una simulación tonta.
-# Pero se puede usar cualquier librería y clase aquí. Incluido el orm para acceder a la bd.
-@shared_task
-def simulate_send_emails(num_emails):
-    for i in range(1, num_emails):
-        print('Sending email %d' % i);
-        # esperamos un segundo.
-        sleep(1)
-
-    return 'Emails sended'
-"""
-@task(name='vencer_reservas')
+@task()
 def vencer_reservas():
     """
     Esta funcion realiza la tarea de cambiar el estado de las reservas a Vencido en funcion de la fecha de caducidad y
@@ -68,16 +55,3 @@ def vencer_reservas():
                     env.save()
 
     return 'Se marcaron reservas como vencidas'
-
-@task(name='tarea_prueba')
-def tarea_prueba():
-    print ('Hola')
-
-@shared_task
-def simulate_send_emails(num_emails):
-    for i in range(1, num_emails):
-        print('Sending email %d' % i);
-        # esperamos un segundo.
-        sleep(1)
-
-    return 'Emails sended'
