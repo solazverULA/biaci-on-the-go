@@ -185,13 +185,19 @@ CELERY_BEAT_SCHEDULE = {
 
     'vencer_reservas': {
         'task': 'reserva.task.vencer_reservas',
-        'schedule': crontab(minute='*/1'),
-        #'schedule': crontab(hour='*/10', minute='45', day_of_week='mon,tue,wed,thu,fri,sat'),
+        #'schedule': crontab(minute='*/1'),
+        'schedule': crontab(hour='*/10', minute='45', day_of_week='mon,tue,wed,thu,fri,sat'),
     },
 
     'enviar_notificacion': {
         'task': 'prestamo.task.enviar_notificacion',
-        'schedule': crontab(minute='*/1'),
-        #'schedule': crontab(hour='*/24', day_of_week='mon,tue,wed,thu,fri,sat,sun'),
+        #'schedule': crontab(minute='*/1'),
+        'schedule': crontab(hour='*/24', day_of_week='mon,tue,wed,thu,fri,sat,sun'),
+    },
+
+    'importar_usuarios': {
+        'task': 'users.task.importar_usuarios',
+        #'schedule': crontab(minute='*/1'),
+        'schedule': crontab(hour='*/24', day_of_week='mon,tue,wed,thu,fri,sat,sun'),
     },
 }

@@ -17,7 +17,9 @@ ESTADO_RESERVA = (
 
 
 class Reserva(models.Model):
-
+    """
+    Modelo que representa la reserva de un libro existente en la biblioteca
+    """
     fecha_reserva = models.DateTimeField(default=datetime.now)
     fecha_caducidad = models.DateTimeField(default=datetime.now()+timedelta(hours=10))
     id_ejemplar = models.ForeignKey(Ejemplar, on_delete=models.CASCADE, null=True)
@@ -32,7 +34,9 @@ class Reserva(models.Model):
 
 
 class HistorialReserva(models.Model):
-
+    """
+    Modelo que representa el historial de reverva
+    """
     id_reserva = models.ForeignKey(Reserva, on_delete=models.CASCADE, null=True)
     accion = models.CharField(max_length=1, choices=ESTADO_RESERVA, blank=True, default='A')
     fecha = models.DateTimeField(default=datetime.now)

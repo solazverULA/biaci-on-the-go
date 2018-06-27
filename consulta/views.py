@@ -5,6 +5,9 @@ from django.template.response import TemplateResponse
 
 # Create your views here.
 class ConsultaList(View):
+    """
+    Esta clase muestra las ultimas 20 consultas hechas por el usuario
+    """
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             context = {
