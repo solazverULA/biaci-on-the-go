@@ -161,7 +161,9 @@ def Reservar(request, id_ejemplar):
 
 
 def Reserva_delete(request, id_reserva):
-
+    """
+    Rutina para eliminar una reserva
+    """
     # Pongo mi reserva como eliminada
     reserva = Reserva.objects.get(id=id_reserva)
     reserva.estado='E'
