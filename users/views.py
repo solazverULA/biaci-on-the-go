@@ -9,10 +9,15 @@ from consulta.models import Consulta
 from django.template.response import TemplateResponse
 from django.views.generic import View, CreateView
 
+from .task import importar_usuarios
+from reserva.task import vencer_reservas
+from prestamo.task import enviar_notificacion
+
 from prestamo.models import Prestamo
 
 from datetime import datetime, timezone, timedelta # Para obtener el tiempo actual
 
+from django.db.models import Count, Max
 
 class SignUp(CreateView):
     form_class = CustomUserCreationForm
@@ -49,6 +54,9 @@ def HomePageView(request):
                                                         ORDER BY total
                                                         DESC LIMIT 10'''),
                                                         }
+        # importar_usuarios()
+        # enviar_notificacion()
+        # vencer_reservas()
         return TemplateResponse(request, 'home.html', context)
 
 
