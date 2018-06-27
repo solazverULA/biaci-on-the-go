@@ -34,7 +34,7 @@ def enviar_notificacion():
 
                 # Envio un correo al usuario de que ha reservado el libro tal
                 correo = send_mail('Recordatorio de BIACI on The Go',
-                                   'Usted debe entregar un libro en la biblioteca entreguelo antes de o estara '
+                                   'Usted debe entregar un libro en la biblioteca entreguelo antes de la fecha o estara '
                                    'insolvente', 'biacionthego@gmail.com', [prestamo.id_usuario.email])
                 if correo == True:
                     # Guardo en Log que el correo si se envio
