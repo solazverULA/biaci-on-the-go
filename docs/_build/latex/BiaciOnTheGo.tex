@@ -58,7 +58,7 @@
 
 
 \title{Biaci On The Go Documentation}
-\date{25 de junio de 2018}
+\date{27 de junio de 2018}
 \release{0.1}
 \author{Miguel Méndez, Yenifer Ramírez y Manuel Zambrano}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -148,11 +148,761 @@ render
 
 
 
+\section{Modules Aplicacion de Reserva}
+\label{\detokenize{modules/reserva/models:module-reserva.models}}\label{\detokenize{modules/reserva/models:modules-aplicacion-de-reserva}}\label{\detokenize{modules/reserva/models::doc}}\index{reserva.models (módulo)}\index{HistorialReserva (clase en reserva.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/reserva/models:reserva.models.HistorialReserva}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{reserva.models.}}\sphinxbfcode{\sphinxupquote{HistorialReserva}}}{\emph{id}, \emph{id\_reserva}, \emph{accion}, \emph{fecha}}{}~\index{HistorialReserva.DoesNotExist}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/reserva/models:reserva.models.HistorialReserva.DoesNotExist}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{DoesNotExist}}}
+\end{fulllineitems}
+
+\index{HistorialReserva.MultipleObjectsReturned}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/reserva/models:reserva.models.HistorialReserva.MultipleObjectsReturned}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{MultipleObjectsReturned}}}
+\end{fulllineitems}
+
+\index{get\_absolute\_url() (método de reserva.models.HistorialReserva)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/reserva/models:reserva.models.HistorialReserva.get_absolute_url}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{get\_absolute\_url}}}{}{}
+Devuelve la url para acceder a un registro de esta reserva
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+\index{Reserva (clase en reserva.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/reserva/models:reserva.models.Reserva}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{reserva.models.}}\sphinxbfcode{\sphinxupquote{Reserva}}}{\emph{id}, \emph{fecha\_reserva}, \emph{fecha\_caducidad}, \emph{id\_ejemplar}, \emph{id\_usuario}, \emph{estado}}{}~\index{Reserva.DoesNotExist}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/reserva/models:reserva.models.Reserva.DoesNotExist}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{DoesNotExist}}}
+\end{fulllineitems}
+
+\index{Reserva.MultipleObjectsReturned}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/reserva/models:reserva.models.Reserva.MultipleObjectsReturned}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{MultipleObjectsReturned}}}
+\end{fulllineitems}
+
+\index{get\_absolute\_url() (método de reserva.models.Reserva)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/reserva/models:reserva.models.Reserva.get_absolute_url}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{get\_absolute\_url}}}{}{}
+Devuelve la url para acceder a un registro de esta reserva
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+
+
+\section{Forms Aplicacion de Reserva}
+\label{\detokenize{modules/reserva/forms:module-reserva.forms}}\label{\detokenize{modules/reserva/forms:forms-aplicacion-de-reserva}}\label{\detokenize{modules/reserva/forms::doc}}\index{reserva.forms (módulo)}\index{ReservaForm (clase en reserva.forms)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/reserva/forms:reserva.forms.ReservaForm}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{reserva.forms.}}\sphinxbfcode{\sphinxupquote{ReservaForm}}}{\emph{*args}, \emph{**kwargs}}{}
+\end{fulllineitems}
+
+
+
+\section{Views Aplicacion de Consulta}
+\label{\detokenize{modules/consulta/views:module-consulta.views}}\label{\detokenize{modules/consulta/views:views-aplicacion-de-consulta}}\label{\detokenize{modules/consulta/views::doc}}\index{consulta.views (módulo)}\index{ConsultaList (clase en consulta.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/consulta/views:consulta.views.ConsultaList}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{consulta.views.}}\sphinxbfcode{\sphinxupquote{ConsultaList}}}{\emph{**kwargs}}{}
+\end{fulllineitems}
+
+
+
+\section{Modules Aplicacion de Consulta}
+\label{\detokenize{modules/consulta/models:module-consulta.models}}\label{\detokenize{modules/consulta/models:modules-aplicacion-de-consulta}}\label{\detokenize{modules/consulta/models::doc}}\index{consulta.models (módulo)}\index{Consulta (clase en consulta.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/consulta/models:consulta.models.Consulta}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{consulta.models.}}\sphinxbfcode{\sphinxupquote{Consulta}}}{\emph{*args}, \emph{**kwargs}}{}
+Clase que define las consultas hechas por un usuario
+\index{Consulta.DoesNotExist}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/consulta/models:consulta.models.Consulta.DoesNotExist}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{DoesNotExist}}}
+\end{fulllineitems}
+
+\index{Consulta.MultipleObjectsReturned}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/consulta/models:consulta.models.Consulta.MultipleObjectsReturned}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{MultipleObjectsReturned}}}
+\end{fulllineitems}
+
+\index{get\_absolute\_url() (método de consulta.models.Consulta)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/consulta/models:consulta.models.Consulta.get_absolute_url}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{get\_absolute\_url}}}{}{}
+Devuelve la url para acceder a un registro de esta consulta
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+
+
+\section{Views Aplicacion de Libro}
+\label{\detokenize{modules/libro/views:module-libro.views}}\label{\detokenize{modules/libro/views:views-aplicacion-de-libro}}\label{\detokenize{modules/libro/views::doc}}\index{libro.views (módulo)}\index{ConsultaTodo (clase en libro.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/views:libro.views.ConsultaTodo}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{libro.views.}}\sphinxbfcode{\sphinxupquote{ConsultaTodo}}}{\emph{**kwargs}}{}
+Esta clase lista todo los libros, revista y tesis disponibles en el OPAC.
+
+\begin{sphinxadmonition}{note}{Nota:}
+La busqueda solo se realiza al usar el buscador del menu.
+\end{sphinxadmonition}
+
+\end{fulllineitems}
+
+\index{EjemplaresVista (clase en libro.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/views:libro.views.EjemplaresVista}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{libro.views.}}\sphinxbfcode{\sphinxupquote{EjemplaresVista}}}{\emph{**kwargs}}{}
+Esta clase lista los ejemplares disponibles de un libro, previa llamada de la clase \sphinxtitleref{LibrosVista}
+\index{get() (método de libro.views.EjemplaresVista)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/views:libro.views.EjemplaresVista.get}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{get}}}{\emph{request}, \emph{pk}, \emph{**kwargs}}{}
+Funcion para recopilar la informacion de los ejemplares del libro seleccionado
+
+A partir de los datos de la consulta, se listan los ejemplares disponibles, dependiendo de lo retornado en el formulario.
+\begin{quote}\begin{description}
+\item[{Devuelve}] \leavevmode
+Una render a la plantilla \sphinxtitleref{ejemplar.html}
+
+\item[{Tipo del valor devuelto}] \leavevmode
+Render
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+\index{LibrosVista (clase en libro.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/views:libro.views.LibrosVista}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{libro.views.}}\sphinxbfcode{\sphinxupquote{LibrosVista}}}{\emph{**kwargs}}{}
+Esta clase recibe los parametros del formulario \sphinxtitleref{ConsultaLibroForm}
+\index{post() (método de libro.views.LibrosVista)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/views:libro.views.LibrosVista.post}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{post}}}{\emph{request}, \emph{*args}, \emph{**kwargs}}{}
+La funcion proviene de la clase \sphinxtitleref{LibrosVista}
+
+Se comparan los distintos parametros recibidos por el post para realizar la consulta.
+\begin{quote}\begin{description}
+\item[{Devuelve}] \leavevmode
+Retorna vista \sphinxtitleref{libros.html}
+
+\item[{Tipo del valor devuelto}] \leavevmode
+TemplateResponse
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+\index{buscador() (en el módulo libro.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/views:libro.views.buscador}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{libro.views.}}\sphinxbfcode{\sphinxupquote{buscador}}}{\emph{request}}{}
+Funcion para mostrar un libro en la data
+
+A partir de los datos de la consulta, se listan los libros disponibles, dependiendo de lo retornado en el formulario.
+\begin{quote}\begin{description}
+\item[{Parámetros}] \leavevmode\begin{itemize}
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{func}} (\sphinxstyleliteralemphasis{\sphinxupquote{Llamada}}) \textendash{} Funcion buscador
+
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{args}} (\sphinxstyleliteralemphasis{\sphinxupquote{Request}}) \textendash{} Argumento a procesar
+
+\end{itemize}
+
+\item[{Devuelve}] \leavevmode
+Una render a la plantilla \sphinxtitleref{buscar.html}
+
+\item[{Tipo del valor devuelto}] \leavevmode
+Render
+
+\end{description}\end{quote}
+
+\begin{sphinxadmonition}{note}{Nota:}
+Se utilizan datos del formulario \sphinxtitleref{ConsultaLibroForm}
+\end{sphinxadmonition}
+
+\end{fulllineitems}
+
+
+
+\section{Modules Aplicacion de Libro}
+\label{\detokenize{modules/libro/models:module-libro.models}}\label{\detokenize{modules/libro/models:modules-aplicacion-de-libro}}\label{\detokenize{modules/libro/models::doc}}\index{libro.models (módulo)}\index{Autor (clase en libro.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Autor}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{libro.models.}}\sphinxbfcode{\sphinxupquote{Autor}}}{\emph{*args}, \emph{**kwargs}}{}
+Representacion del modelo Autor.
+\index{Autor.DoesNotExist}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Autor.DoesNotExist}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{DoesNotExist}}}
+\end{fulllineitems}
+
+\index{Autor.MultipleObjectsReturned}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Autor.MultipleObjectsReturned}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{MultipleObjectsReturned}}}
+\end{fulllineitems}
+
+\index{get\_absolute\_url() (método de libro.models.Autor)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Autor.get_absolute_url}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{get\_absolute\_url}}}{}{}
+Retorna la url para ver detalles de autor.
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+\index{Biblioteca (clase en libro.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Biblioteca}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{libro.models.}}\sphinxbfcode{\sphinxupquote{Biblioteca}}}{\emph{*args}, \emph{**kwargs}}{}
+Modelo que representa un biblioteca de la ULA
+\begin{quote}\begin{description}
+\item[{Example}] \leavevmode
+Biaci, Trujillo, etc.
+
+\end{description}\end{quote}
+\index{Biblioteca.DoesNotExist}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Biblioteca.DoesNotExist}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{DoesNotExist}}}
+\end{fulllineitems}
+
+\index{Biblioteca.MultipleObjectsReturned}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Biblioteca.MultipleObjectsReturned}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{MultipleObjectsReturned}}}
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+\index{Ejemplar (clase en libro.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Ejemplar}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{libro.models.}}\sphinxbfcode{\sphinxupquote{Ejemplar}}}{\emph{*args}, \emph{**kwargs}}{}
+Modelo que representa un ejemplar de un libro
+\index{Ejemplar.DoesNotExist}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Ejemplar.DoesNotExist}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{DoesNotExist}}}
+\end{fulllineitems}
+
+\index{Ejemplar.MultipleObjectsReturned}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Ejemplar.MultipleObjectsReturned}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{MultipleObjectsReturned}}}
+\end{fulllineitems}
+
+\index{get\_absolute\_url() (método de libro.models.Ejemplar)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Ejemplar.get_absolute_url}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{get\_absolute\_url}}}{}{}
+Devuelve la url para acceder a un registro de este ejemplar
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+\index{Idioma (clase en libro.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Idioma}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{libro.models.}}\sphinxbfcode{\sphinxupquote{Idioma}}}{\emph{*args}, \emph{**kwargs}}{}
+Modelo que representa un lenguaje
+\begin{quote}\begin{description}
+\item[{Example}] \leavevmode
+ej. español, ingles, etc.
+
+\end{description}\end{quote}
+\index{Idioma.DoesNotExist}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Idioma.DoesNotExist}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{DoesNotExist}}}
+\end{fulllineitems}
+
+\index{Idioma.MultipleObjectsReturned}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Idioma.MultipleObjectsReturned}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{MultipleObjectsReturned}}}
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+\index{Libro (clase en libro.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Libro}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{libro.models.}}\sphinxbfcode{\sphinxupquote{Libro}}}{\emph{*args}, \emph{**kwargs}}{}
+Modelo que representa un libro (pero no un ejemplar para prestar).
+\index{Libro.DoesNotExist}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Libro.DoesNotExist}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{DoesNotExist}}}
+\end{fulllineitems}
+
+\index{Libro.MultipleObjectsReturned}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Libro.MultipleObjectsReturned}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{MultipleObjectsReturned}}}
+\end{fulllineitems}
+
+\index{get\_absolute\_url() (método de libro.models.Libro)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Libro.get_absolute_url}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{get\_absolute\_url}}}{}{}
+Devuelve la url para acceder a un registro de este libro
+
+\end{fulllineitems}
+
+\index{save() (método de libro.models.Libro)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Libro.save}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{save}}}{\emph{*args}, \emph{**kwargs}}{}
+Funcion que descargar la portada del libro pasada por el url y lo guarda localmente
+\begin{quote}\begin{description}
+\item[{Parámetros}] \leavevmode\begin{itemize}
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{args}} \textendash{} Parametro Vacio
+
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{kwargs}} \textendash{} Parametro Vacio
+
+\end{itemize}
+
+\item[{Devuelve}] \leavevmode
+una funcion de guardar.
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+\index{Materia (clase en libro.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Materia}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{libro.models.}}\sphinxbfcode{\sphinxupquote{Materia}}}{\emph{*args}, \emph{**kwargs}}{}
+Modelo que representa una materia
+\index{Materia.DoesNotExist}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Materia.DoesNotExist}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{DoesNotExist}}}
+\end{fulllineitems}
+
+\index{Materia.MultipleObjectsReturned}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/models:libro.models.Materia.MultipleObjectsReturned}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{MultipleObjectsReturned}}}
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+
+
+\section{Forms Aplicacion de Libro}
+\label{\detokenize{modules/libro/forms:module-libro.forms}}\label{\detokenize{modules/libro/forms:forms-aplicacion-de-libro}}\label{\detokenize{modules/libro/forms::doc}}\index{libro.forms (módulo)}\index{ConsultaLibroForm (clase en libro.forms)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/libro/forms:libro.forms.ConsultaLibroForm}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{libro.forms.}}\sphinxbfcode{\sphinxupquote{ConsultaLibroForm}}}{\emph{data=None}, \emph{files=None}, \emph{auto\_id='id\_\%s'}, \emph{prefix=None}, \emph{initial=None}, \emph{error\_class=\textless{}class 'django.forms.utils.ErrorList'\textgreater{}}, \emph{label\_suffix=None}, \emph{empty\_permitted=False}, \emph{instance=None}, \emph{use\_required\_attribute=None}}{}
+\end{fulllineitems}
+
+
+
+\section{Views Aplicacion de Prestamo}
+\label{\detokenize{modules/prestamo/views:module-prestamo.views}}\label{\detokenize{modules/prestamo/views:views-aplicacion-de-prestamo}}\label{\detokenize{modules/prestamo/views::doc}}\index{prestamo.views (módulo)}
+
+\section{Modules Aplicacion de Prestamo}
+\label{\detokenize{modules/prestamo/models:module-prestamo.models}}\label{\detokenize{modules/prestamo/models:modules-aplicacion-de-prestamo}}\label{\detokenize{modules/prestamo/models::doc}}\index{prestamo.models (módulo)}\index{Prestamo (clase en prestamo.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/prestamo/models:prestamo.models.Prestamo}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{prestamo.models.}}\sphinxbfcode{\sphinxupquote{Prestamo}}}{\emph{id}, \emph{id\_usuario}, \emph{id\_ejemplar}, \emph{fecha\_prestamo}, \emph{fecha\_entrega}}{}~\index{Prestamo.DoesNotExist}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/prestamo/models:prestamo.models.Prestamo.DoesNotExist}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{DoesNotExist}}}
+\end{fulllineitems}
+
+\index{Prestamo.MultipleObjectsReturned}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/prestamo/models:prestamo.models.Prestamo.MultipleObjectsReturned}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{MultipleObjectsReturned}}}
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+
+
+\section{Views Aplicacion de Revista}
+\label{\detokenize{modules/revista/views:module-revista.views}}\label{\detokenize{modules/revista/views:views-aplicacion-de-revista}}\label{\detokenize{modules/revista/views::doc}}\index{revista.views (módulo)}\index{EjemplaresVista (clase en revista.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/revista/views:revista.views.EjemplaresVista}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{revista.views.}}\sphinxbfcode{\sphinxupquote{EjemplaresVista}}}{\emph{**kwargs}}{}
+\end{fulllineitems}
+
+\index{RevistaVista (clase en revista.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/revista/views:revista.views.RevistaVista}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{revista.views.}}\sphinxbfcode{\sphinxupquote{RevistaVista}}}{\emph{**kwargs}}{}
+\end{fulllineitems}
+
+
+
+\section{Modules Aplicacion de Revista}
+\label{\detokenize{modules/revista/models:module-revista.models}}\label{\detokenize{modules/revista/models:modules-aplicacion-de-revista}}\label{\detokenize{modules/revista/models::doc}}\index{revista.models (módulo)}\index{EjemplarRevista (clase en revista.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/revista/models:revista.models.EjemplarRevista}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{revista.models.}}\sphinxbfcode{\sphinxupquote{EjemplarRevista}}}{\emph{*args}, \emph{**kwargs}}{}
+Modelo que representa un ejemplar de una revista
+\index{EjemplarRevista.DoesNotExist}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/revista/models:revista.models.EjemplarRevista.DoesNotExist}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{DoesNotExist}}}
+\end{fulllineitems}
+
+\index{EjemplarRevista.MultipleObjectsReturned}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/revista/models:revista.models.EjemplarRevista.MultipleObjectsReturned}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{MultipleObjectsReturned}}}
+\end{fulllineitems}
+
+\index{get\_absolute\_url() (método de revista.models.EjemplarRevista)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/revista/models:revista.models.EjemplarRevista.get_absolute_url}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{get\_absolute\_url}}}{}{}
+Devuelve la url para acceder a un registro de este ejemplar
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+\index{Revista (clase en revista.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/revista/models:revista.models.Revista}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{revista.models.}}\sphinxbfcode{\sphinxupquote{Revista}}}{\emph{*args}, \emph{**kwargs}}{}
+Modelo que representa una revista (pero no un ejemplar para prestar).
+\index{Revista.DoesNotExist}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/revista/models:revista.models.Revista.DoesNotExist}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{DoesNotExist}}}
+\end{fulllineitems}
+
+\index{Revista.MultipleObjectsReturned}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/revista/models:revista.models.Revista.MultipleObjectsReturned}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{MultipleObjectsReturned}}}
+\end{fulllineitems}
+
+\index{get\_absolute\_url() (método de revista.models.Revista)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/revista/models:revista.models.Revista.get_absolute_url}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{get\_absolute\_url}}}{}{}
+Devuelve la url para acceder a un registro de esta revista
+
+\end{fulllineitems}
+
+\index{save() (método de revista.models.Revista)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/revista/models:revista.models.Revista.save}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{save}}}{\emph{*args}, \emph{**kwargs}}{}
+Funcion que descargar la portada del libro pasada por el url y lo guarda localmente
+\begin{quote}\begin{description}
+\item[{Parámetros}] \leavevmode\begin{itemize}
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{args}} \textendash{} Parametro Vacio
+
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{kwargs}} \textendash{} Parametro Vacio
+
+\end{itemize}
+
+\item[{Devuelve}] \leavevmode
+una funcion de guardar.
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+
+
+\section{Forms Aplicacion de Revista}
+\label{\detokenize{modules/revista/forms:module-revista.forms}}\label{\detokenize{modules/revista/forms:forms-aplicacion-de-revista}}\label{\detokenize{modules/revista/forms::doc}}\index{revista.forms (módulo)}\index{ConsultaRevistaForm (clase en revista.forms)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/revista/forms:revista.forms.ConsultaRevistaForm}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{revista.forms.}}\sphinxbfcode{\sphinxupquote{ConsultaRevistaForm}}}{\emph{data=None}, \emph{files=None}, \emph{auto\_id='id\_\%s'}, \emph{prefix=None}, \emph{initial=None}, \emph{error\_class=\textless{}class 'django.forms.utils.ErrorList'\textgreater{}}, \emph{label\_suffix=None}, \emph{empty\_permitted=False}, \emph{instance=None}, \emph{use\_required\_attribute=None}}{}
+\end{fulllineitems}
+
+
+
+\section{Views Aplicacion de Tesis}
+\label{\detokenize{modules/tesis/views:module-tesis.views}}\label{\detokenize{modules/tesis/views:views-aplicacion-de-tesis}}\label{\detokenize{modules/tesis/views::doc}}\index{tesis.views (módulo)}\index{EjemplaresTesis (clase en tesis.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/tesis/views:tesis.views.EjemplaresTesis}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{tesis.views.}}\sphinxbfcode{\sphinxupquote{EjemplaresTesis}}}{\emph{**kwargs}}{}
+\end{fulllineitems}
+
+\index{TesisVista (clase en tesis.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/tesis/views:tesis.views.TesisVista}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{tesis.views.}}\sphinxbfcode{\sphinxupquote{TesisVista}}}{\emph{**kwargs}}{}
+\end{fulllineitems}
+
+
+
+\section{Modules Aplicacion de Tesis}
+\label{\detokenize{modules/tesis/models:module-tesis.models}}\label{\detokenize{modules/tesis/models:modules-aplicacion-de-tesis}}\label{\detokenize{modules/tesis/models::doc}}\index{tesis.models (módulo)}\index{Tesis (clase en tesis.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/tesis/models:tesis.models.Tesis}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{tesis.models.}}\sphinxbfcode{\sphinxupquote{Tesis}}}{\emph{*args}, \emph{**kwargs}}{}
+Modelo que representa una tesis (pero no un ejemplar para prestar).
+\index{Tesis.DoesNotExist}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/tesis/models:tesis.models.Tesis.DoesNotExist}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{DoesNotExist}}}
+\end{fulllineitems}
+
+\index{Tesis.MultipleObjectsReturned}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/tesis/models:tesis.models.Tesis.MultipleObjectsReturned}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{MultipleObjectsReturned}}}
+\end{fulllineitems}
+
+\index{get\_absolute\_url() (método de tesis.models.Tesis)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/tesis/models:tesis.models.Tesis.get_absolute_url}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{get\_absolute\_url}}}{}{}
+Devuelve la url para acceder a u registro de esta revista
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+
+
+\section{Forms Aplicacion de Tesis}
+\label{\detokenize{modules/tesis/forms:module-tesis.forms}}\label{\detokenize{modules/tesis/forms:forms-aplicacion-de-tesis}}\label{\detokenize{modules/tesis/forms::doc}}\index{tesis.forms (módulo)}\index{ConsultaTesisForm (clase en tesis.forms)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/tesis/forms:tesis.forms.ConsultaTesisForm}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{tesis.forms.}}\sphinxbfcode{\sphinxupquote{ConsultaTesisForm}}}{\emph{data=None}, \emph{files=None}, \emph{auto\_id='id\_\%s'}, \emph{prefix=None}, \emph{initial=None}, \emph{error\_class=\textless{}class 'django.forms.utils.ErrorList'\textgreater{}}, \emph{label\_suffix=None}, \emph{empty\_permitted=False}, \emph{instance=None}, \emph{use\_required\_attribute=None}}{}
+\end{fulllineitems}
+
+
+
+\section{Views Aplicacion de Usuario}
+\label{\detokenize{modules/users/views:module-users.views}}\label{\detokenize{modules/users/views:views-aplicacion-de-usuario}}\label{\detokenize{modules/users/views::doc}}\index{users.views (módulo)}\index{ErrorSignUp (clase en users.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/views:users.views.ErrorSignUp}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{users.views.}}\sphinxbfcode{\sphinxupquote{ErrorSignUp}}}{\emph{**kwargs}}{}
+\end{fulllineitems}
+
+\index{PerfilView() (en el módulo users.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/views:users.views.PerfilView}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{users.views.}}\sphinxbfcode{\sphinxupquote{PerfilView}}}{\emph{request}}{}
+Funcion que muestra el perfil del usuario, ademas consulta si tiene prestamos proximos a vencerse para notificarlo
+:param request:
+:return: Render
+
+\end{fulllineitems}
+
+\index{SignUp (clase en users.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/views:users.views.SignUp}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{users.views.}}\sphinxbfcode{\sphinxupquote{SignUp}}}{\emph{**kwargs}}{}~\index{form\_class (atributo de users.views.SignUp)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/views:users.views.SignUp.form_class}}\pysigline{\sphinxbfcode{\sphinxupquote{form\_class}}}
+alias de {\hyperref[\detokenize{modules/users/forms:users.forms.CustomUserCreationForm}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{users.forms.CustomUserCreationForm}}}}}
+
+\end{fulllineitems}
+
+\index{form\_valid() (método de users.views.SignUp)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/views:users.views.SignUp.form_valid}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{form\_valid}}}{\emph{form}}{}
+If the form is valid, save the associated model.
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+
+
+\section{Modules Aplicacion de Usuarios}
+\label{\detokenize{modules/users/models:module-users.models}}\label{\detokenize{modules/users/models:modules-aplicacion-de-usuarios}}\label{\detokenize{modules/users/models::doc}}\index{users.models (módulo)}\index{CompleteUser (clase en users.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/models:users.models.CompleteUser}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{users.models.}}\sphinxbfcode{\sphinxupquote{CompleteUser}}}{\emph{id}, \emph{password}, \emph{last\_login}, \emph{is\_superuser}, \emph{username}, \emph{first\_name}, \emph{last\_name}, \emph{email}, \emph{is\_staff}, \emph{is\_active}, \emph{date\_joined}, \emph{customuser\_ptr}, \emph{cedula}, \emph{estado}, \emph{sexo}, \emph{cod\_area}, \emph{num\_telefono}, \emph{direccion}}{}~\index{CompleteUser.DoesNotExist}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/models:users.models.CompleteUser.DoesNotExist}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{DoesNotExist}}}
+\end{fulllineitems}
+
+\index{CompleteUser.MultipleObjectsReturned}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/models:users.models.CompleteUser.MultipleObjectsReturned}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{MultipleObjectsReturned}}}
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+\index{CustomUser (clase en users.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/models:users.models.CustomUser}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{users.models.}}\sphinxbfcode{\sphinxupquote{CustomUser}}}{\emph{id}, \emph{password}, \emph{last\_login}, \emph{is\_superuser}, \emph{username}, \emph{first\_name}, \emph{last\_name}, \emph{email}, \emph{is\_staff}, \emph{is\_active}, \emph{date\_joined}}{}~\index{CustomUser.DoesNotExist}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/models:users.models.CustomUser.DoesNotExist}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{DoesNotExist}}}
+\end{fulllineitems}
+
+\index{CustomUser.MultipleObjectsReturned}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/models:users.models.CustomUser.MultipleObjectsReturned}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{MultipleObjectsReturned}}}
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+\index{LogCorreo (clase en users.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/models:users.models.LogCorreo}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{users.models.}}\sphinxbfcode{\sphinxupquote{LogCorreo}}}{\emph{*args}, \emph{**kwargs}}{}
+Modelo para los log del envio de correo
+:Example:
+\begin{quote}
+
+Envio de correo de una reserva, notificacion,…
+\end{quote}
+\index{LogCorreo.DoesNotExist}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/models:users.models.LogCorreo.DoesNotExist}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{DoesNotExist}}}
+\end{fulllineitems}
+
+\index{LogCorreo.MultipleObjectsReturned}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/models:users.models.LogCorreo.MultipleObjectsReturned}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{MultipleObjectsReturned}}}
+\end{fulllineitems}
+
+\index{get\_absolute\_url() (método de users.models.LogCorreo)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/models:users.models.LogCorreo.get_absolute_url}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{get\_absolute\_url}}}{}{}
+Devuelve la url para acceder a un log de los correos
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+\index{RegistedUserId (clase en users.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/models:users.models.RegistedUserId}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{users.models.}}\sphinxbfcode{\sphinxupquote{RegistedUserId}}}{\emph{*args}, \emph{**kwargs}}{}
+«docstring for RegistedUser
+\index{RegistedUserId.DoesNotExist}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/models:users.models.RegistedUserId.DoesNotExist}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{DoesNotExist}}}
+\end{fulllineitems}
+
+\index{RegistedUserId.MultipleObjectsReturned}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/models:users.models.RegistedUserId.MultipleObjectsReturned}}\pysigline{\sphinxbfcode{\sphinxupquote{exception }}\sphinxbfcode{\sphinxupquote{MultipleObjectsReturned}}}
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+
+
+\section{Forms Aplicacion de Usuarios}
+\label{\detokenize{modules/users/forms:module-users.forms}}\label{\detokenize{modules/users/forms:forms-aplicacion-de-usuarios}}\label{\detokenize{modules/users/forms::doc}}\index{users.forms (módulo)}\index{CustomUserChangeForm (clase en users.forms)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/forms:users.forms.CustomUserChangeForm}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{users.forms.}}\sphinxbfcode{\sphinxupquote{CustomUserChangeForm}}}{\emph{*args}, \emph{**kwargs}}{}
+\end{fulllineitems}
+
+\index{CustomUserCreationForm (clase en users.forms)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{modules/users/forms:users.forms.CustomUserCreationForm}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{users.forms.}}\sphinxbfcode{\sphinxupquote{CustomUserCreationForm}}}{\emph{*args}, \emph{**kwargs}}{}
+\end{fulllineitems}
+
+
+
 \renewcommand{\indexname}{Índice de Módulos Python}
 \begin{sphinxtheindex}
 \def\bigletter#1{{\Large\sffamily#1}\nopagebreak\vspace{1mm}}
+\bigletter{c}
+\item {\sphinxstyleindexentry{consulta.models}}\sphinxstyleindexpageref{modules/consulta/models:\detokenize{module-consulta.models}}
+\item {\sphinxstyleindexentry{consulta.views}}\sphinxstyleindexpageref{modules/consulta/views:\detokenize{module-consulta.views}}
+\indexspace
+\bigletter{l}
+\item {\sphinxstyleindexentry{libro.forms}}\sphinxstyleindexpageref{modules/libro/forms:\detokenize{module-libro.forms}}
+\item {\sphinxstyleindexentry{libro.models}}\sphinxstyleindexpageref{modules/libro/models:\detokenize{module-libro.models}}
+\item {\sphinxstyleindexentry{libro.views}}\sphinxstyleindexpageref{modules/libro/views:\detokenize{module-libro.views}}
+\indexspace
+\bigletter{p}
+\item {\sphinxstyleindexentry{prestamo.models}}\sphinxstyleindexpageref{modules/prestamo/models:\detokenize{module-prestamo.models}}
+\item {\sphinxstyleindexentry{prestamo.views}}\sphinxstyleindexpageref{modules/prestamo/views:\detokenize{module-prestamo.views}}
+\indexspace
 \bigletter{r}
+\item {\sphinxstyleindexentry{reserva.forms}}\sphinxstyleindexpageref{modules/reserva/forms:\detokenize{module-reserva.forms}}
+\item {\sphinxstyleindexentry{reserva.models}}\sphinxstyleindexpageref{modules/reserva/models:\detokenize{module-reserva.models}}
 \item {\sphinxstyleindexentry{reserva.views}}\sphinxstyleindexpageref{modules/reserva/views:\detokenize{module-reserva.views}}
+\item {\sphinxstyleindexentry{revista.forms}}\sphinxstyleindexpageref{modules/revista/forms:\detokenize{module-revista.forms}}
+\item {\sphinxstyleindexentry{revista.models}}\sphinxstyleindexpageref{modules/revista/models:\detokenize{module-revista.models}}
+\item {\sphinxstyleindexentry{revista.views}}\sphinxstyleindexpageref{modules/revista/views:\detokenize{module-revista.views}}
+\indexspace
+\bigletter{t}
+\item {\sphinxstyleindexentry{tesis.forms}}\sphinxstyleindexpageref{modules/tesis/forms:\detokenize{module-tesis.forms}}
+\item {\sphinxstyleindexentry{tesis.models}}\sphinxstyleindexpageref{modules/tesis/models:\detokenize{module-tesis.models}}
+\item {\sphinxstyleindexentry{tesis.views}}\sphinxstyleindexpageref{modules/tesis/views:\detokenize{module-tesis.views}}
+\indexspace
+\bigletter{u}
+\item {\sphinxstyleindexentry{users.forms}}\sphinxstyleindexpageref{modules/users/forms:\detokenize{module-users.forms}}
+\item {\sphinxstyleindexentry{users.models}}\sphinxstyleindexpageref{modules/users/models:\detokenize{module-users.models}}
+\item {\sphinxstyleindexentry{users.views}}\sphinxstyleindexpageref{modules/users/views:\detokenize{module-users.views}}
 \end{sphinxtheindex}
 
 \renewcommand{\indexname}{Índice}
