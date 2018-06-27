@@ -56,7 +56,7 @@ class Registerloging(unittest.TestCase):
         driver.find_element_by_id("id_password2").send_keys("1234qwer")
         time.sleep(0.5)
         driver.find_element_by_name("submit").click()
-        time.sleep(8)
+        time.sleep(4)
         driver.find_element_by_id("id_username").clear()
         driver.find_element_by_id("id_username").send_keys("MiguelMendez")
         time.sleep(0.5)
@@ -64,7 +64,6 @@ class Registerloging(unittest.TestCase):
         driver.find_element_by_id("id_password").send_keys("1234qwer")
         time.sleep(0.5)
         driver.find_element_by_xpath("//button[@type='submit']").click()
-        time.sleep(8)
         driver.find_element_by_link_text("Log Out").click()
         time.sleep(5)
     

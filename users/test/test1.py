@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
-from users.models import RegistedUserId
+
 
 class Prueba(unittest.TestCase):
     def setUp(self):
@@ -55,7 +55,7 @@ class Prueba(unittest.TestCase):
         driver.find_element_by_id("id_password2").send_keys("1234qwer")
         time.sleep(0.5)
         driver.find_element_by_name("submit").click()
-        time.sleep(10)
+        time.sleep(5)
     
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
