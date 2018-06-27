@@ -8,11 +8,10 @@ from .models import CompleteUser, CustomUser , RegistedUserId
 from consulta.models import Consulta
 from django.template.response import TemplateResponse
 from django.views.generic import View, CreateView
-<<<<<<< HEAD
 
-from .task import importar_usuarios
-from reserva.task import vencer_reservas
-from prestamo.task import enviar_notificacion
+#from .task import importar_usuarios
+#from reserva.task import vencer_reservas
+#from prestamo.task import enviar_notificacion
 
 from prestamo.models import Prestamo
 
@@ -55,10 +54,10 @@ def HomePageView(request):
                                                         ORDER BY total
                                                         DESC LIMIT 10'''),
                                                         }
-        # importar_usuarios()
-        # enviar_notificacion()
-        # vencer_reservas()
-        return TemplateResponse(request, 'home.html', context)
+    #importar_usuarios()
+    #enviar_notificacion()
+    #vencer_reservas()
+    return TemplateResponse(request, 'home.html', context)
 
 
 def PerfilView(request):
