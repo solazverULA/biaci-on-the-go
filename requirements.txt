@@ -6,7 +6,7 @@ celery==4.2.0
 certifi==2018.4.16
 chardet==3.0.4
 dj-database-url==0.5.0
-Django==2.0.5
+Django==2.2.24
 django-celery-monitor==1.1.2
 docutils==0.14
 gunicorn==19.8.1
